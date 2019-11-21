@@ -15,3 +15,12 @@ h1 {
     text-decoration: none;
     color: black;
 }
+
+.form-control {
+    border-radius: 20px;
+}
+select option {
+    font-size: 15px;
+}
+
+

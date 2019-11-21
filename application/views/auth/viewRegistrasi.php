@@ -11,32 +11,39 @@
                         </div>
                         <form class="user" method="post" action="<?= base_url() ?>auth/registrasi">
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="name" name="name"
-                                    placeholder="Full name">
+                                <input type="text" class="form-control form-control-user" id="name" name="nama"
+                                    placeholder="Nama lengkap" value="<?= set_value('nama'); ?>">
+                                <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class=" form-group">
                                 <input type="text" class="form-control form-control-user" id="email" name="email"
-                                    placeholder="Email Address">
+                                    placeholder="Alamat email" value="<?= set_value('email'); ?>">
+                                <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" id="jurusan" name="jurusan">
+                                    <option selected>Daftar sebagai</option>
+                                    <option value="Pembeli" name="pembeli">Pembeli</option>
+                                    <option value="Petani" name="petani">Petani</option>
+                                </select>
                             </div>
                             <div class=" form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input type="password" class="form-control form-control-user" id="password1"
                                         name="password1" placeholder="Password">
+                                    <?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="password" class="form-control form-control-user" id="password2"
-                                        name="password2" placeholder="Repeat Password">
+                                        name="password2" placeholder="Ulangi password">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary btn-user btn-block mb-3">
-                                Register Account
+                                Daftar
                             </button>
                         </form>
                         <div class="text-center">
-                            <a class="small" href="forgot-password.html">Forgot Password?</a>
-                        </div>
-                        <div class="text-center">
-                            <a class="small" href="<?= base_url() ?>auth">Already have an account? Login!</a>
+                            <a class="small" href="<?= base_url() ?>auth">Sudah punya akun? Login!</a>
                         </div>
                     </div>
                 </div>

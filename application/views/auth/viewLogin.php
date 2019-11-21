@@ -13,12 +13,13 @@
                             <div class="p-5">
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Login</h1>
+                                    <?= $this->session->flashdata('message'); ?>
                                 </div>
                                 <form class="user">
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user"
                                             id="exampleInputEmail" aria-describedby="emailHelp"
-                                            placeholder="Enter Email Address...">
+                                            placeholder="Masukkan alamat email">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user"
@@ -29,10 +30,10 @@
                                     </a>
                                 </form>
                                 <div class="text-center">
-                                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                    <a class="small" href="forgot-password.html">Lupa password ?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="<?= base_url() ?>auth/registrasi">Create an Account!</a>
+                                    <a class="small" href="<?= base_url() ?>auth/registrasi">Buat akun!</a>
                                 </div>
                             </div>
                         </div>
