@@ -42,7 +42,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm textStyle">
-            <a href="">
+            <a href="<?= base_url() ?>auth">
                 <div class="card mb-3">
                     <img src="<?= base_url() ?>assets/img/bgSayur.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -56,10 +56,9 @@
             </a>
         </div>
         <div class="col-sm textStyle">
-            <a href="">
+            <a href="<?= base_url() ?>auth">
                 <div class="card mb-3">
                     <img src="<?= base_url() ?>assets/img/bgSayur1.jpg" class="card-img-top" alt="...">
-
                     <div class="card-body">
                         <p class="card-text">Kotak Sortasi Angka / Kotak Pas / Number Shape Sorting / Mainan Anak
                             Edukatif /
