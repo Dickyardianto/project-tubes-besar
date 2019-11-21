@@ -8,3 +8,10 @@
 h1 {
     line-height: 50%;
 }
+.textStyle a {
+    color: black;
+}
+.textStyle a:hover {
+    text-decoration: none;
+    color: black;
+}
