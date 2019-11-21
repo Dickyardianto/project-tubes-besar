@@ -1,0 +1,6 @@
+.jumbotron {
+    margin-top: 50px !important;
+    background-image: url('../img/bgSayur.jpg');
+    background-size: cover;
+    height: 700px;
+}
