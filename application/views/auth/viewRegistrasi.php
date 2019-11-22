@@ -21,10 +21,10 @@
                                 <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group">
-                                <select class="form-control" id="jurusan" name="jurusan">
+                                <select class="form-control" id="role" name="role">
                                     <option selected>Daftar sebagai</option>
-                                    <option value="Pembeli" name="pembeli">Pembeli</option>
-                                    <option value="Petani" name="petani">Petani</option>
+                                    <option value="2">Pembeli</option>
+                                    <option value="3">Petani</option>
                                 </select>
                             </div>
                             <div class=" form-group row">
