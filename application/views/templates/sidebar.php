@@ -7,7 +7,7 @@
             <!-- Icon disamping tulisan -->
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SayurKeun </div>
+        <div class="sidebar-brand-text mx-3">Petani</div>
     </a>
 
     <!-- Divider -->
