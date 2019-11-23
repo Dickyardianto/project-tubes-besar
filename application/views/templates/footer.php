@@ -7,6 +7,11 @@
     </div>
 </footer>
 <!-- End of Footer -->
+<!-- <footer class="footer fixed-bottom">
+    <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+</footer> -->
 
 </div>
 <!-- End of Content Wrapper -->

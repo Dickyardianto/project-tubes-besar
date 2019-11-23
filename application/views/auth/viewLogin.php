@@ -18,7 +18,7 @@
                                 <form class="user" method="post" action="<?= base_url() ?>auth">
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user" name="email"
-                                            id="email" placeholder="Enter Email Address..." autocomplete="off"
+                                            id="email" placeholder="Masukkan email anda" autocomplete="off"
                                             value="<?= set_value('email'); ?>">
                                         <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
