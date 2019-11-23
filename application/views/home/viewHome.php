@@ -44,12 +44,11 @@
         <div class="col-sm textStyle">
             <a href="<?= base_url() ?>auth">
                 <div class="card mb-3">
-                    <img src="<?= base_url() ?>assets/img/bgSayur.jpg" class="card-img-top" alt="...">
+                    <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
+                        class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Kotak Sortasi Angka / Kotak Pas / Number Shape Sorting / Mainan Anak
-                            Edukatif /
-                            Edukasi Aika Edu Toys</p>
-                        <p>Rp. 18.000</p>
+                        <p class="card-text"><?= $sayur['deskripsi'] ?> </p>
+                        <p>Rp. <?= $sayur['harga'] ?> (/Kg)</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>
@@ -58,7 +57,7 @@
         <div class="col-sm textStyle">
             <a href="<?= base_url() ?>auth">
                 <div class="card mb-3">
-                    <img src="<?= base_url() ?>assets/img/bgSayur1.jpg" class="card-img-top" alt="...">
+                    <img src="<?= base_url() ?>assets/img/bgSayur.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">Kotak Sortasi Angka / Kotak Pas / Number Shape Sorting / Mainan Anak
                             Edukatif /
