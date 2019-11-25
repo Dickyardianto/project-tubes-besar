@@ -32,8 +32,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Query -->
+                    <?php
+                    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+                    $id_petani = $user['id'];
+                    // var_dump($id_petani);
+                    // die;
+                    $queryTampilSesuaiId = "SELECT *
+                                            FROM `sayuran` JOIN `user`
+                                            ON `sayuran`.`id_petani` = `user`.`id`
+                                            WHERE `sayuran`.`id_petani` = $id_petani";
+                    $sayuran2 = $this->db->query($queryTampilSesuaiId)->result_array();
+                    ?>
+
+                    <!-- Akhir Query -->
                     <?php $i = 1; ?>
-                    <?php foreach ($sayuran as $s) : ?>
+                    <?php foreach ($sayuran2 as $s) : ?>
                     <tr>
                         <th scope="row"><?= $i ?></th>
                         <td><?= $s['jenis_sayur']; ?></td>

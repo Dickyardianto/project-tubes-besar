@@ -26,7 +26,7 @@ class Petani extends CI_Controller
 
     public function tampilSayuran()
     {
-        $data['title'] = 'Daftar Penjualan';
+        $data['title'] = 'Data Sayuran';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['sayuran'] = $this->petani->getAllSayuran();
         $this->load->view('templates/header', $data);
