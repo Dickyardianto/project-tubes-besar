@@ -41,6 +41,8 @@
 <!-- Content -->
 <div class="container">
     <div class="row">
+        <!-- menampilkan berbagai macam sayuran -->
+        <?php foreach ($sayuran as $sayur) : ?>
         <div class="col-sm textStyle">
             <a href="<?= base_url() ?>auth">
                 <div class="card mb-3">
@@ -54,41 +56,6 @@
                 </div>
             </a>
         </div>
-        <div class="col-sm textStyle">
-            <a href="<?= base_url() ?>auth">
-                <div class="card mb-3">
-                    <img src="<?= base_url() ?>assets/img/bgSayur.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Kotak Sortasi Angka / Kotak Pas / Number Shape Sorting / Mainan Anak
-                            Edukatif /
-                            Edukasi Aika Edu Toys</p>
-                        <p>Rp. 18.000</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm">
-            <div class="card mb-3">
-                <img src="<?= base_url() ?>assets/img/bgSayur.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Kotak Sortasi Angka / Kotak Pas / Number Shape Sorting / Mainan Anak Edukatif /
-                        Edukasi Aika Edu Toys</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card mb-3">
-                <img src="<?= base_url() ?>assets/img/bgSayur.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Kotak Sortasi Angka / Kotak Pas / Number Shape Sorting / Mainan Anak Edukatif /
-                        Edukasi Aika Edu Toys</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-
-
+        <?php endforeach; ?>
     </div>
     <!-- Akhir Content -->

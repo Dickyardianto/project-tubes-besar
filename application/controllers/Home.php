@@ -13,9 +13,8 @@ class Home extends CI_Controller
     public function index()
     {
         $data['title'] = 'SayurKeun';
-        $data['sayur'] = $this->db->get('sayuran')->row_array();
-        // var_dump($data);
-        // die;
+        // $data['sayur'] = $this->db->get('sayuran')->row_array();
+        $data['sayuran'] = $this->petani->getAllSayuran();
         $this->load->view('templatesHome/header', $data);
         $this->load->view('home/viewHome', $data);
         $this->load->view('templatesHome/footer');
