@@ -110,4 +110,9 @@ class Auth extends CI_Controller
         // Meredirect ke controller Auth/method index
         redirect('auth');
     }
+
+    public function blocked()
+    {
+        $this->load->view('auth/blocked');
+    }
 }

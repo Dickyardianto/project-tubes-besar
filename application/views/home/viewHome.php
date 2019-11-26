@@ -47,15 +47,18 @@
             <a href="<?= base_url() ?>auth">
                 <div class="card mb-3">
                     <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
-                        class="card-img-top" alt="...">
+                        class="card-img-top" alt="..." width="40" height="120">
                     <div class="card-body">
                         <p class="card-text"><?= $sayur['deskripsi'] ?> </p>
                         <p>Rp. <?= $sayur['harga'] ?> (/Kg)</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <p class="card-text"><small class="text-muted">Last updated
+                                <?= $sayur['tanggal_rilis']; ?></small>
+                        </p>
                     </div>
                 </div>
             </a>
         </div>
         <?php endforeach; ?>
     </div>
-    <!-- Akhir Content -->
+</div>
+<!-- Akhir Content -->
