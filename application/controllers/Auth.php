@@ -12,6 +12,10 @@ class Auth extends CI_Controller
 
     public function index()
     {
+        if ($this->session->userdata('email')) {
+            redirect('petani');
+        }
+
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
         if ($this->form_validation->run() == false) {
@@ -26,6 +30,9 @@ class Auth extends CI_Controller
 
     public function registrasi()
     {
+        if ($this->session->userdata('email')) {
+            redirect('auth');
+        }
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');

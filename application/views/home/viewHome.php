@@ -43,7 +43,7 @@
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuran as $sayur) : ?>
-        <div class="col-sm textStyle">
+        <div class="col-sm-3 textStyle">
             <a href="<?= base_url() ?>auth">
                 <div class="card mb-3">
                     <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
