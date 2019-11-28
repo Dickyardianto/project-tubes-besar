@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min2.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
 
-    <title>Hello, world!</title>
+    <title>Sayurkeun</title>
 </head>
 
 <body>
