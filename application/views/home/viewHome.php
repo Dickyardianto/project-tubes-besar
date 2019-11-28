@@ -52,7 +52,8 @@
                         <p class="card-text"><?= $sayur['deskripsi'] ?> </p>
                         <p>Rp. <?= $sayur['harga'] ?> (/Kg)</p>
                         <p class="card-text"><small class="text-muted">Last updated
-                                <?= $sayur['tanggal_rilis']; ?></small>
+
+                                <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
                         </p>
                     </div>
                 </div>

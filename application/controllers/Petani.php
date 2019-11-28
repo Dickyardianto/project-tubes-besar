@@ -44,7 +44,7 @@ class Petani extends CI_Controller
         $this->form_validation->set_rules('nama-sayur', 'Nama sayur', 'required|trim');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi sayur', 'required|trim');
         $this->form_validation->set_rules('harga', 'Harga sayur', 'required|trim');
-        $this->form_validation->set_rules('tanggal-rilis', 'Tanggal rilis', 'required');
+        // $this->form_validation->set_rules('tanggal-rilis', 'Tanggal rilis', 'required');
 
 
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -73,14 +73,13 @@ class Petani extends CI_Controller
                     //     unlink(FCPATH . 'assets/img/gambar-sayur/' . $old_image);
                     // }
                     $new_image = $this->upload->data();
-                    // $new_image = $this->upload->data('file_name');
                     $id_petani = $data['user']['id'];
                     $data = [
                         'jenis_sayur' => htmlspecialchars($this->input->post('jenis-sayur', true)),
                         'nama_sayur' => htmlspecialchars($this->input->post('nama-sayur', true)),
                         'deskripsi' => htmlspecialchars($this->input->post('deskripsi', true)),
                         'harga' => htmlspecialchars($this->input->post('harga', true)),
-                        'tanggal_rilis' => htmlspecialchars($this->input->post('tanggal-rilis', true)),
+                        'tanggal_rilis' => time(),
                         'id_petani' => $id_petani,
                         'gambar_sayur' => $new_image['file_name']
                     ];
@@ -90,10 +89,16 @@ class Petani extends CI_Controller
                 }
             }
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil ditambahkan');
+            // redirect('petani/tampilSayuran');
             redirect('petani/tampilSayuran');
-            // Input ke db_pecal di tabel user
-            // Meredirect ke controller
         }
-        // redirect('petani/tampilSayuran');
+    }
+
+
+    public function hapusSayur($id)
+    {
+        $this->petani->hapusDataSayur($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data berhasil dihapus</div>');
+        redirect('petani/tampilSayuran');
     }
 }

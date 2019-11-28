@@ -44,16 +44,25 @@
                         <?php
                         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
                         $id_petani = $user['id'];
+
                         // var_dump($id_petani);
                         // die;
-                        $queryTampilSesuaiId = "SELECT *
+                        // $this->db->select('*');
+                        // $this->db->from('sayuran');
+                        // $this->db->join('user', 'user.id = sayuran.id_petani');
+                        // $this->db->where('sayuran.id_petani', $id_petani);
+                        // $sayuran2 = $this->db->get();
+
+                        $queryTampilSesuaiId = "SELECT *, `sayuran`.`id` AS `id_sayur`
                                             FROM `sayuran` JOIN `user`
                                             ON `sayuran`.`id_petani` = `user`.`id`
                                             WHERE `sayuran`.`id_petani` = $id_petani";
                         $sayuran2 = $this->db->query($queryTampilSesuaiId)->result_array();
+                        // var_dump($sayuran2);
+                        // die;
                         ?>
-
                         <!-- Akhir Query -->
+
                         <?php $i = 1; ?>
                         <?php foreach ($sayuran2 as $s) : ?>
                         <tr>
@@ -66,9 +75,9 @@
                                     width="60" height="60">
                             </td>
                             <td>
-                                <a href="<?= base_url(); ?>menu/ubahSubMenu/<?= $s['id']; ?>"
+                                <a href="<?= base_url(); ?>petani/ubahSayur/<?= $s['id']; ?>"
                                     class="badge badge-success">edit</a>
-                                <a href="<?= base_url(); ?>menu/deleteSubMenu/<?= $s['id']; ?>"
+                                <a href="<?= base_url(); ?>petani/hapusSayur/<?= $s['id_sayur'] ?>"
                                     class="badge badge-danger" onclick="return confirm('yakin ? ');">delete</a>
                             </td>
                         </tr>
@@ -112,10 +121,10 @@
                 <div class="form-group">
                     <input type="text" class="form-control" id="harga" name="harga" placeholder="Harga">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <input type="date" class="form-control" id="tanggal-rilis" name="tanggal-rilis"
                         placeholder="Tanggal rilis">
-                </div>
+                </div> -->
                 <div class="form-group">
                     <div class="col-sm-8">
                         <div class="row">
