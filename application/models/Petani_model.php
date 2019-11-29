@@ -12,4 +12,9 @@ class Petani_model extends CI_model
 
         $this->db->delete('sayuran', ['id' => $id]);
     }
+
+    public function getSayurById($id)
+    {
+        return $this->db->get_where('sayuran', ['id' => $id])->row_array();
+    }
 }

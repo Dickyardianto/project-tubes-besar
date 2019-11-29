@@ -18,6 +18,7 @@
             <?= $this->session->flashdata('message'); ?>
         </div>
     </div>
+
     <div class="container">
         <div class="row">
             <div class="col-lg">
@@ -75,10 +76,11 @@
                                     width="60" height="60">
                             </td>
                             <td>
-                                <a href="<?= base_url(); ?>petani/ubahSayur/<?= $s['id']; ?>"
-                                    class="badge badge-success">edit</a>
+                                <a href="<?= base_url(); ?>petani/ubahSayur/<?= $s['id_sayur']; ?>"
+                                    class="badge badge-success"><i class="far fa-edit"></i></a>
                                 <a href="<?= base_url(); ?>petani/hapusSayur/<?= $s['id_sayur'] ?>"
-                                    class="badge badge-danger" onclick="return confirm('yakin ? ');">delete</a>
+                                    class="badge badge-danger" data-toggle="modal" data-target="#exampleModal"><i
+                                        class="far fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         <?php $i++; ?>
@@ -92,7 +94,35 @@
 
 </div>
 <!-- /.container-fluid -->
-<!-- Modal -->
+
+<!-- Modal delete-->
+<?php foreach ($sayuran2 as $sa) : ?>
+<?= form_open_multipart('petani/hapusSayur/' . $sa['id_sayur']); ?>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Hapus sayur ini</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Yakin ingin mengahapus ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Yakin</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<?php endforeach; ?>
+
+
+<!-- Modal tambah sayur-->
 <div class="modal fade" id="newSubMenuModal" tabindex="-1" role="dialog" aria-labelledby="newSubMenuModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -121,10 +151,6 @@
                 <div class="form-group">
                     <input type="text" class="form-control" id="harga" name="harga" placeholder="Harga">
                 </div>
-                <!-- <div class="form-group">
-                    <input type="date" class="form-control" id="tanggal-rilis" name="tanggal-rilis"
-                        placeholder="Tanggal rilis">
-                </div> -->
                 <div class="form-group">
                     <div class="col-sm-8">
                         <div class="row">

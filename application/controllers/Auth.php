@@ -36,6 +36,7 @@ class Auth extends CI_Controller
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required');
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
             'matches' => 'Password tidak sama !',
             'min_length' => 'Password sangat pendek !'
@@ -56,7 +57,8 @@ class Auth extends CI_Controller
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                 'role_id' => $this->input->post('role'),
                 'is_active' => 1,
-                'date_created' => time()
+                'date_created' => time(),
+                'alamat' => htmlspecialchars($this->input->post('alamat', true))
             ];
 
             // Input ke db_pecal di tabel user
@@ -93,7 +95,7 @@ class Auth extends CI_Controller
                         redirect('pembeli');
                     }
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password !');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah !');
                     // Meredirect ke controller Auth/method index
                     redirect('auth');
                 }
