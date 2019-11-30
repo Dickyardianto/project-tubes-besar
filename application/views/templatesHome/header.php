@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min2.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
 
     <title><?= $title ?></title>
 </head>
@@ -25,20 +26,38 @@
             </button>
             <div id="navbarNavDropdown" class="navbar-collapse collapse">
                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <form class="form-inline my-sm-0">
+                            <input class="form-control mr-sm ml-5 mr-3" id="cari" type="search" placeholder="Cari Sayuran..." aria-label="Search">
+                        </form>
+                    </li>
                     <li class="nav-item active">
-                        <a class="nav-link text-light" href="#">Home</a>
+                        <a class="nav-link text-light" href="#">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Features</a>
+                        <a class="nav-link text-light" href="#">Kategori</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Pricing</a>
+                        <a class="nav-link text-light" href="#">Promo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">PerkembanganPasar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light fas fa-cart-arrow-down"href=""></a>
                     </li>
 
                 </ul>
                 <ul class="navbar-nav">
+                    <li class="nav-item"> 
+                        <form class="form-inline my-2 my-lg-0">
+                            <button class="btn btn-outline-light my-2 my-sm-0 mr-2" type="submit">Masuk</button>
+                        </form>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="">Login</a>
+                        <form class="form-inline my-2 my-lg-0">
+                            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Daftar</button>
+                        </form>
                     </li>
                 </ul>
             </div>
