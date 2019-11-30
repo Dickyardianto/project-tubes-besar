@@ -1,5 +1,5 @@
 .jumbotron {
-    margin-top: 50px !important;
+    /* margin-top: 50px !important; */
     background-image: url('../img/bgSayur1.jpg');
     background-size: cover;
     height: 700px;
@@ -23,4 +23,22 @@ select option {
     font-size: 15px;
 }
 
+.top-margin {
+    margin-top: 100px;
+}
+
+.tshadow {
+    text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* .card img {
+    width: 250px;
+    height: 250px;
+} */
+a:hover {
+    text-decoration: none !important;
+}
+.warna a button {
+    background-color: #ddd !important;
+}
 
