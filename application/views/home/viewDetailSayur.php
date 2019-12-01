@@ -67,7 +67,7 @@
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <div class="col">
-                    <p style="" class="card-text">
+                    <p class="card-text">
                         <?= $petani['alamat'] ?></p>
                 </div>
             </div>
@@ -113,4 +113,33 @@
             </div>
         </div>
     </div>
+
 </div>
+
+<section id="viewSayur" class="viewSayur mt-3">
+    <div class="container-fluid p-4">
+        <div class="row">
+            <!-- menampilkan berbagai macam sayuran -->
+            <?php foreach ($tampilSayur as $sayur) : ?>
+            <div class="col-sm-2 textStyle">
+                <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
+                    <div class="card mb-3">
+                        <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text"><?= $sayur['deskripsi'] ?> </p>
+                            <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
+                                (/<?= $sayur['satuan'] . ")" ?></p>
+                            <p class="card-text"><small class="text-muted">ditambahkan pada
+
+                                    <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <?php endforeach; ?>
+        </div>
+
+    </div>
+</section>

@@ -26,7 +26,7 @@ class Home extends CI_Controller
         $data['title'] = 'Belanja sayur hemat hanya disini';
         // $data['sayuran'] = $this->db->get('sayuran')->row_array();
         $data['sayuran'] = $this->home->getSayurById($id);
-        // $data['sayuran'] = $this->petani->getAllSayuran();
+        $data['tampilSayur'] = $this->petani->getAllSayuran();
         $this->load->view('templatesHome/header', $data);
         $this->load->view('home/viewDetailSayur', $data);
         $this->load->view('templatesHome/footer');
