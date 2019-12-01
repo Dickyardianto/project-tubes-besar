@@ -40,11 +40,21 @@
                         <input type="text" name="deskripsi" id="deskripsi" class="form-control"
                             value="<?= $sayur['deskripsi']; ?>">
                         <small class="form-text text-danger"><?= form_error('deskripsi'); ?></small>
-
-                        <label for="exampleFormControlInput1">Harga</label>
-                        <input type="text" name="harga" id="harga" class="form-control" value="<?= $sayur['harga']; ?>">
-                        <small class="form-text text-danger"><?= form_error('harga'); ?></small>
-
+                        <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <label for="exampleFormControlInput1">Harga</label>
+                                <input type="text" class="form-control" id="harga" name="harga" placeholder="Harga"
+                                    value="<?= $sayur['harga']; ?>">
+                                <small class="form-text text-danger"><?= form_error('harga'); ?></small>
+                            </div>
+                            <div class="col-sm-6">
+                                <select class="form-control" id="satuan" name="satuan">
+                                    <option selected>Satuan</option>
+                                    <option value="Kg">(/Kg)</option>
+                                    <option value="Ons">(/Ons)</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <div class="col-sm-2">Picture</div>
                             <div class="col-sm-10">

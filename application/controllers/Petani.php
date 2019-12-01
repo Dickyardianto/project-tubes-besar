@@ -81,7 +81,8 @@ class Petani extends CI_Controller
                         'harga' => htmlspecialchars($this->input->post('harga', true)),
                         'tanggal_rilis' => time(),
                         'id_petani' => $id_petani,
-                        'gambar_sayur' => $new_image['file_name']
+                        'gambar_sayur' => $new_image['file_name'],
+                        'satuan' => $this->input->post('satuan')
                     ];
                     $this->db->insert('sayuran', $data);
                 } else {
@@ -163,7 +164,8 @@ class Petani extends CI_Controller
                         'harga' => htmlspecialchars($this->input->post('harga', true)),
                         'tanggal_rilis' => time(),
                         'id_petani' => $id_petani,
-                        'gambar_sayur' => $new_image['file_name']
+                        'gambar_sayur' => $new_image['file_name'],
+                        'satuan' => $this->input->post('satuan')
                     ];
 
                     $this->db->where('id', $this->input->post('id'));

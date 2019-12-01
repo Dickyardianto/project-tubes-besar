@@ -21,8 +21,9 @@
                         class="card-img-top" alt="..." width="40" height="120">
                     <div class="card-body">
                         <p class="card-text"><?= $sayur['deskripsi'] ?> </p>
-                        <p>Rp. <?= $sayur['harga'] ?> (/Kg)</p>
-                        <p class="card-text"><small class="text-muted">Last updated
+                        <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
+                            (/<?= $sayur['satuan'] . ")" ?></p>
+                        <p class="card-text"><small class="text-muted">ditambahkan pada
 
                                 <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
                         </p>

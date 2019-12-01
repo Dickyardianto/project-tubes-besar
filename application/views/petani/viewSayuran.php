@@ -148,8 +148,17 @@
                     <textarea class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi"
                         rows="3"></textarea>
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="harga" name="harga" placeholder="Harga">
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control" id="harga" name="harga" placeholder="Harga">
+                    </div>
+                    <div class="col-sm-6">
+                        <select class="form-control" id="satuan" name="satuan">
+                            <option selected>Satuan</option>
+                            <option value="Kg">(/Kg)</option>
+                            <option value="Ons">(/Ons)</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-8">
