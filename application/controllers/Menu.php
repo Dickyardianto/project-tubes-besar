@@ -114,24 +114,14 @@ class Menu extends CI_Controller
     }
 
 
-    public function ubahSubMenu($id, $id2)
+    public function ubahSubMenu($id)
     {
-        // var_dump($id);
-        // die;
         $data['title'] = 'Ubah SubMenu Management';
         $data['titleSidebar'] = 'Admin';
         $data['icon'] = '<i class="fas fa-user-cog"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['menuId'] = $this->menu->getMenu($id2);
         $data['submenu'] = $this->menu->getSubMenuById($id);
-
-
-        // var_dump($data['menuId']);
-        // die;
-
-        // Ubah submenu masih gagal
-
-        $data['menu'] = $this->db->get('user_menu')->result_array();
+        $data['menu'] = $this->db->get('user_menu')->result();
 
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('url', 'URL', 'required');
@@ -144,7 +134,7 @@ class Menu extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $this->menu->ubahSubMenuManagement();
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Updated new subMenu </div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Submenu berhasil diubah </div>');
             redirect('menu/subMenu');
         }
     }

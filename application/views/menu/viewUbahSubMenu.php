@@ -1,6 +1,7 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
+
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
@@ -21,13 +22,17 @@
                         <small class="form-text text-danger"><?= form_error('menu'); ?></small>
                     </div>
                 </div>
+
                 <div class="form-row">
                     <div class="col-5">
                         <label for="exampleFormControlInput1">Menu</label>
-                        <select name="menu_id" id="menu_id" class="form-control">
-                            <option value="">Select menu</option>
+                        <select class="form-control" id="menu_id" name="menu_id">
                             <?php foreach ($menu as $m) : ?>
-                            <option value="<?= $m['id'] ?>"><?= $m['menu'] ?></option>
+                            <?php if ($m->id == $submenu['menu_id']) : ?>
+                            <option value="<?php echo $m->id; ?>" selected><?php echo $m->menu; ?></option>
+                            <?php else : ?>
+                            <option value="<?= $m->id; ?>"><?= $m->menu; ?></option>
+                            <?php endif; ?>
                             <?php endforeach; ?>
                         </select>
                     </div>
