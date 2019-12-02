@@ -13,7 +13,7 @@ class Menu extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Menu Management';
+        $data['title'] = 'Menu management';
         $data['titleSidebar'] = 'Admin';
         $data['icon'] = '<i class="fas fa-user-cog"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -63,6 +63,89 @@ class Menu extends CI_Controller
             $this->menu->ubahMenuManagement();
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Menu berhasil diubah </div>');
             redirect('menu');
+        }
+    }
+
+
+    public function subMenu()
+    {
+        $data['title'] = 'Submenu Management';
+        $data['titleSidebar'] = 'Admin';
+        $data['icon'] = '<i class="fas fa-user-cog"></i>';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        // echo 'Selamat datang ' . $data['user']['name'];
+
+        $this->load->model('Menu_model', 'menu');
+
+        $data['subMenu'] = $this->menu->getSubmenu();
+        $data['menu'] = $this->db->get('user_menu')->result_array();
+
+        $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('menu_id', 'Menu', 'required');
+        $this->form_validation->set_rules('url', 'Url', 'required');
+        $this->form_validation->set_rules('icon', 'icon', 'required');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('menu/viewSubMenu', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $data = [
+                'title' => $this->input->post('title'),
+                'menu_id' => $this->input->post('menu_id'),
+                'url' => $this->input->post('url'),
+                'icon' => $this->input->post('icon'),
+                'is_active' => $this->input->post('is_active')
+            ];
+            $this->db->insert('user_sub_menu', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Submenu baru berhasil ditambah </div>');
+            // Meredirect ke controller Auth/method index
+            redirect('menu/subMenu');
+        }
+    }
+
+
+    public function deleteSubMenu($id)
+    {
+        $this->menu->hapusDataSubMenu($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Submenu berhasil dihapus</div>');
+        redirect('menu/subMenu');
+    }
+
+
+    public function ubahSubMenu($id, $id2)
+    {
+        // var_dump($id);
+        // die;
+        $data['title'] = 'Ubah SubMenu Management';
+        $data['titleSidebar'] = 'Admin';
+        $data['icon'] = '<i class="fas fa-user-cog"></i>';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['menuId'] = $this->menu->getMenu($id2);
+        $data['submenu'] = $this->menu->getSubMenuById($id);
+
+
+        // var_dump($data['menuId']);
+        // die;
+
+        // Ubah submenu masih gagal
+
+        $data['menu'] = $this->db->get('user_menu')->result_array();
+
+        $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('url', 'URL', 'required');
+        $this->form_validation->set_rules('icon', 'Icon', 'required');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('menu/viewUbahSubMenu', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $this->menu->ubahSubMenuManagement();
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Updated new subMenu </div>');
+            redirect('menu/subMenu');
         }
     }
 }

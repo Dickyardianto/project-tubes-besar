@@ -28,7 +28,7 @@ class Admin extends CI_Controller
 
     public function editProfile()
     {
-        $data['title'] = 'Edit Profile';
+        $data['title'] = 'Edit profile';
         $data['titleSidebar'] = 'Admin';
         $data['icon'] = '<i class="fas fa-user-cog"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
