@@ -15,6 +15,8 @@ class Petani extends CI_Controller
     public function index()
     {
         $data['title'] = 'Dashboard';
+        $data['titleSidebar'] = 'Petani';
+        $data['icon'] = '<i class="fas fa-book-reader"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         // echo 'Selamat datang ' . $data['user']['name'];
 
@@ -28,6 +30,8 @@ class Petani extends CI_Controller
     public function tampilSayuran()
     {
         $data['title'] = 'Data Sayuran';
+        $data['titleSidebar'] = 'Petani';
+        $data['icon'] = '<i class="fas fa-book-reader"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['sayuran'] = $this->petani->getAllSayuran();
         $this->load->view('templates/header', $data);
@@ -128,6 +132,8 @@ class Petani extends CI_Controller
         $this->form_validation->set_rules('harga', 'Harga sayur', 'required|trim');
 
         $data['title'] = 'Ubah Sayuran';
+        $data['titleSidebar'] = 'Petani';
+        $data['icon'] = '<i class="fas fa-book-reader"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['sayur'] = $this->petani->getSayurById($id);
 
@@ -139,12 +145,18 @@ class Petani extends CI_Controller
             $this->load->view('petani/viewUbahSayur', $data);
             $this->load->view('templates/footer');
         } else {
+            $id_petani = $data['user']['id'];
+            $jenis_sayur = htmlspecialchars($this->input->post('jenis-sayur', true));
+            $nama_sayur = htmlspecialchars($this->input->post('nama-sayur', true));
+            $deskripsi = htmlspecialchars($this->input->post('deskripsi', true));
+            $harga = htmlspecialchars($this->input->post('harga', true));
+            $tanggal_rilis = time();
+            $id_petaniS = $id_petani;
+            $satuan = $this->input->post('satuan');
+
+            // cek jika ada gambar yang akan diupload
             $upload_image = $_FILES['gambar']['name'];
-            if ($upload_image == '') {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Gambar tidak boleh kosong');
-                // redirect('petani/tampilSayuran');
-                redirect('petani/tampilSayuran');
-            }
+
             if ($upload_image) {
                 $this->upload_gambar();
 
@@ -153,31 +165,69 @@ class Petani extends CI_Controller
                     if ($old_image != 'sayur.jpg') {
                         unlink(FCPATH . 'assets/img/gambar-sayur/' . $old_image);
                     }
-
                     $new_image = $this->upload->data();
-                    $id_petani = $data['user']['id'];
-
-                    $data = [
-                        'jenis_sayur' => htmlspecialchars($this->input->post('jenis-sayur', true)),
-                        'nama_sayur' => htmlspecialchars($this->input->post('nama-sayur', true)),
-                        'deskripsi' => htmlspecialchars($this->input->post('deskripsi', true)),
-                        'harga' => htmlspecialchars($this->input->post('harga', true)),
-                        'tanggal_rilis' => time(),
-                        'id_petani' => $id_petani,
-                        'gambar_sayur' => $new_image['file_name'],
-                        'satuan' => $this->input->post('satuan')
-                    ];
-
-                    $this->db->where('id', $this->input->post('id'));
-                    $this->db->update("sayuran", $data);
+                    $this->db->set('gambar_sayur', $new_image['file_name']);
                 } else {
-                    echo $this->upload->display_errors();
+                    // echo $this->upload->display_errors();
+                    $this->session->set_flashdata('message', "<div class='alert alert-danger' role='alert'>Gambar tidak sesuai format : </br> gif\jpg\jpeg\png </br>max size: 8 Mb</div>");
+                    redirect('petani/tampilSayuran');
                 }
             }
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil diubah');
-            // redirect('petani/tampilSayuran');
+
+            $this->db->set('jenis_sayur', $jenis_sayur);
+            $this->db->set('nama_sayur', $nama_sayur);
+            $this->db->set('deskripsi', $deskripsi);
+            $this->db->set('harga', $harga);
+            $this->db->set('tanggal_rilis', $tanggal_rilis);
+            $this->db->set('id_petani', $id_petaniS);
+            $this->db->set('satuan', $satuan);
+            $this->db->where('id', $this->input->post('id'));
+            $this->db->update('sayuran');
+
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil diubah</div>');
             redirect('petani/tampilSayuran');
-            // echo "Berhasil";
         }
+
+        // Akhir coba
+
+        // $upload_image = $_FILES['gambar']['name'];
+        // if ($upload_image == '') {
+        //     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Gambar tidak boleh kosong');
+        //     // redirect('petani/tampilSayuran');
+        //     redirect('petani/tampilSayuran');
+        // }
+        // if ($upload_image) {
+        //     $this->upload_gambar();
+
+        //     if ($this->upload->do_upload('gambar')) {
+        //         $old_image = $data['sayur']['gambar_sayur'];
+        //         if ($old_image != 'sayur.jpg') {
+        //             unlink(FCPATH . 'assets/img/gambar-sayur/' . $old_image);
+        //         }
+
+        //         $new_image = $this->upload->data();
+        //         $id_petani = $data['user']['id'];
+
+        //         $data = [
+        //             'jenis_sayur' => htmlspecialchars($this->input->post('jenis-sayur', true)),
+        //             'nama_sayur' => htmlspecialchars($this->input->post('nama-sayur', true)),
+        //             'deskripsi' => htmlspecialchars($this->input->post('deskripsi', true)),
+        //             'harga' => htmlspecialchars($this->input->post('harga', true)),
+        //             'tanggal_rilis' => time(),
+        //             'id_petani' => $id_petani,
+        //             'gambar_sayur' => $new_image['file_name'],
+        //             'satuan' => $this->input->post('satuan')
+        //         ];
+
+        //         $this->db->where('id', $this->input->post('id'));
+        //         $this->db->update("sayuran", $data);
+        //     } else {
+        //         echo $this->upload->display_errors();
+        //     }
+        // }
+        // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil diubah');
+        // // redirect('petani/tampilSayuran');
+        // redirect('petani/tampilSayuran');
+        // // echo "Berhasil";
     }
 }
