@@ -21,6 +21,7 @@
     <link href="<?= base_url(); ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min2.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
 </head>
 

@@ -6,14 +6,14 @@
 
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg">
             <!-- Tampilkan pesan error -->
             <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
             <?= $this->session->flashdata('message'); ?>
 
             <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newMenuModal">Tambah menu baru</a>
 
-            <table class="table table-hover">
+            <table class="table table-hover" id="dataTables">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

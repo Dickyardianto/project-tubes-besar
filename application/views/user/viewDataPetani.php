@@ -11,7 +11,7 @@
             <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
             <?= $this->session->flashdata('message'); ?>
 
-            <table class="table table-hover">
+            <table class="table table-hover" id="dataTables">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
