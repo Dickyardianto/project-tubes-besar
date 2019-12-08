@@ -13,7 +13,7 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'SayurKeun';
+        $data['title'] = 'Niaga Sayur';
         // $data['sayur'] = $this->db->get('sayuran')->row_array();
         $data['sayuran'] = $this->petani->getAllSayuran();
         $this->load->view('templatesHome/header', $data);

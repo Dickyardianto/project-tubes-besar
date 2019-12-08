@@ -28,7 +28,7 @@
                 <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newSubMenuModal">Tambah
                     sayuran</a>
 
-                <table class="table table-hover">
+                <table class="table table-hover" id="dataTables">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -79,7 +79,7 @@
                                 <a href="<?= base_url(); ?>petani/ubahSayur/<?= $s['id_sayur']; ?>"
                                     class="badge badge-success"><i class="far fa-edit"></i></a>
                                 <a href="<?= base_url(); ?>petani/hapusSayur/<?= $s['id_sayur'] ?>"
-                                    class="badge badge-danger" data-toggle="modal" data-target="#exampleModal"><i
+                                    class="badge badge-danger" onclick="return confirm('yakin ? ');"><i
                                         class="far fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -95,31 +95,6 @@
 </div>
 <!-- /.container-fluid -->
 
-<!-- Modal delete-->
-<?php foreach ($sayuran2 as $sa) : ?>
-<?= form_open_multipart('petani/hapusSayur/' . $sa['id_sayur']); ?>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Hapus sayur ini</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Yakin ingin mengahapus ?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-primary">Yakin</button>
-            </div>
-        </div>
-    </div>
-</div>
-</form>
-<?php endforeach; ?>
 
 
 <!-- Modal tambah sayur-->

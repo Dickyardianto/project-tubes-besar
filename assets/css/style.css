@@ -49,3 +49,8 @@ a:hover {
 section {
     background-color: #fff;
 }
+
+.coba img {
+    width: auto;
+    height: 150px;
+}

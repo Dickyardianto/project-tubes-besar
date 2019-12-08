@@ -123,7 +123,7 @@
             <?php foreach ($tampilSayur as $sayur) : ?>
             <div class="col-sm-2 textStyle">
                 <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
-                    <div class="card mb-3">
+                    <div class="card mb-3 coba">
                         <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
                             class="card-img-top" alt="...">
                         <div class="card-body">

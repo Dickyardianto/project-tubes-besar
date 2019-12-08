@@ -53,6 +53,8 @@ class Petani extends CI_Controller
 
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['title'] = 'Data Sayuran';
+        $data['titleSidebar'] = 'Petani';
+        $data['icon'] = '<i class="fas fa-book-reader"></i>';
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
@@ -72,10 +74,6 @@ class Petani extends CI_Controller
                 $this->upload->initialize($config);
 
                 if ($this->upload->do_upload('gambar')) {
-                    // $old_image = $data['user']['gambar_sayur'];
-                    // if ($old_image != 'sayur.jpg') {
-                    //     unlink(FCPATH . 'assets/img/gambar-sayur/' . $old_image);
-                    // }
                     $new_image = $this->upload->data();
                     $id_petani = $data['user']['id'];
                     $data = [
