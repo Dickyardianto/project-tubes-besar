@@ -98,4 +98,11 @@ class Admin extends CI_Controller
             // redirect('menu');
         }
     }
+
+    public function hapusPetani($id)
+    {
+        $this->admin->hapusDataPetani($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data berhasil dihapus</div>');
+        redirect('admin/dataPetani');
+    }
 }

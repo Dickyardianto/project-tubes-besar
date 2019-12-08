@@ -12,4 +12,9 @@ class Admin_model extends CI_model
 
         return $query->result_array();
     }
+
+    public function hapusDataPetani($id)
+    {
+        $this->db->delete('user', ['id' => $id]);
+    }
 }
