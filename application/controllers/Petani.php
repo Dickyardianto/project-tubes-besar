@@ -274,4 +274,47 @@ class Petani extends CI_Controller
             redirect('petani');
         }
     }
+
+
+    public function ubahPassword()
+    {
+        $data['title'] = 'Ubah password';
+        $data['titleSidebar'] = 'Petani';
+        $data['icon'] = '<i class="fas fa-book-reader"></i>';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->form_validation->set_rules('password_saat_ini', 'Password saat ini', 'required|trim');
+        $this->form_validation->set_rules('password_baru1', 'Password baru', 'required|trim|min_length[6]|matches[password_baru2]');
+        $this->form_validation->set_rules('password_baru2', 'Ulangi password baru', 'required|trim|min_length[6]|matches[password_baru1]');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('petani/viewUbahPassword', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $password_saat_ini = $this->input->post('password_saat_ini');
+            $password_baru = $this->input->post('password_baru1');
+
+            if (!password_verify($password_saat_ini, $data['user']['password'])) {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah !</div>');
+                redirect('petani/ubahPassword');
+            } else {
+                if ($password_saat_ini == $password_baru) {
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password baru tidak boleh sama dengan password saat ini !</div>');
+                    redirect('petani/ubahPassword');
+                } else {
+                    $password_hash = password_hash($password_baru, PASSWORD_DEFAULT);
+
+                    $this->db->set('password', $password_hash);
+                    $this->db->where('email', $this->session->userdata('email'));
+                    $this->db->update('user');
+
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Password berhasil dirubah !</div>');
+                    redirect('petani/ubahPassword');
+                }
+            }
+        }
+    }
 }
