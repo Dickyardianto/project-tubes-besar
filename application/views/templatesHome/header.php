@@ -41,9 +41,9 @@
                     </form>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li> <a class="navbar-brand mr-4" href="#">
-                            <img src="<?= base_url(); ?>assets/vendor/Assets-Dhika/images/png/2.png" width="30"
-                                height="30" class="d-inline-block align-top my-2 my-sm-0" alt=""></a></li>
+                    <li>
+                         <a class="navbar-brand mr-4 text-light" href="#"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
                     <li><button class="btn btn-outline-light my-2 my-sm-0" type="submit">Login</button></li>
                 </ul>
             </div>
