@@ -8,13 +8,13 @@
               <p class="card-text mb-2 small"><i class="fas fa-map-marker-alt"> Jl. Dr. Setiabudi No.193, Kota Bandung</i></p>
               <p class="card-text mb-2 small"><i class="fas fa-phone-alt"></i>  029317492746</p>
               <p class="card-text small"><i class="fab fa-whatsapp"></i>  +62 320 574</p>
-              <div class="card-text d-inline-block">
-                  <a href="#"><img src="images/medsos/ig.png" width="30" height="30" alt=""></a>
-                  <a href="#"><img src="images/medsos/fb.png" width="30" height="30" class="ml-3" alt=""></a>
-                  <a href="#"><img src="images/medsos/twt.png" width="30" height="30" class="ml-3" alt=""></a>
-                  <a href="#"><img src="images/medsos/yt.png" width="30" height="30" class="ml-3" alt=""></a>
-                  <a href="#"><img src="images/medsos/path.png" width="30" height="30" class="ml-3" alt=""></a>
-                  <a href="#"><img src="images/medsos/line.png" width="30" height="30" class="ml-3" alt=""></a>
+              <div class="card-text d-inline-block" style="font-size:30px;">
+                    <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-twitter-square"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-youtube-square"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-pinterest-square"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-line"></i></a>
               </div>
           </div>
 
