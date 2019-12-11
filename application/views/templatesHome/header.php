@@ -29,7 +29,7 @@
             <div id="navbarNavDropdown" class="navbar-collapse collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link text-light" href="#">Home</a>
+                        <a class="nav-link text-light" href="<?php ?>">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">Features</a>
