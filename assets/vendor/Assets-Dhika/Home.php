@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style/style.css">
 
     <title>Niaga Sayur</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/logonsbig.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo/logonsbig.png" />
   </head>
   <body>
 
@@ -18,16 +18,16 @@
         <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                     <a class="navbar-brand" href="#">
-                    <img src="images/logonsbig.png" width="30" height="30" class="d-inline-block align-top" alt=""> Niaga Sayur</a>
+                    <img src="images/logo/logonsbig.png" width="30" height="30" class="d-inline-block align-top" alt=""> Niaga Sayur</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link active" href="#">Kategori</a>
-                        <form class="form-inline my-2 my-lg-0">
+                        <!-- <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2 ml-3" type="search" placeholder="cari sayur disini !" aria-label="Search">
-                        </form>
+                        </form> -->
                         </div>
                         <ul class="nav navbar-nav navbar-right" >
                         <li> <a class="navbar-brand mr-4" href="#">
@@ -51,13 +51,13 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="images/slide/11.jpg" class="d-block w-100" alt="...">
+                            <img src="images/slide/1.jpg" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                            <img src="images/slide/22.jpg" class="d-block w-100" alt="...">
+                            <img src="images/slide/2.jpg" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                            <img src="images/slide/33.jpg" class="d-block w-100" alt="...">
+                            <img src="images/slide/3.jpg" class="d-block w-100" alt="...">
                             </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -371,25 +371,45 @@
 
     <div class="row">
 
-                <div class="col-sm-5">
+                <div class="col-sm-4">
                     <div class="card bg-dark text-light" style="width: 100%;">
                     <div class="card-body">
-                        <h5 class="card-title">Ikuti Kami.</h5>
+                        <h5 class="card-title">Kontak.</h5>
+                        <p class="card-text mb-0 small">Bandung Setiabudhi.</p>
+                        <p class="card-text mb-0 small">Call Center: 029317492746</p>
+                        <p class="card-text small">SMS/WA: 092371846283</p>
                         <div class="card-text d-inline-block">
-                        <a href="#"><img src="images/logonsbig.png" width="30" height="30" alt=""></a>
-                        <a href="#"><img src="images/logonsbig.png" width="30" height="30" class="ml-3" alt=""></a>
-                        <a href="#"><img src="images/logonsbig.png" width="30" height="30" class="ml-3" alt=""></a>
-                        <a href="#"><img src="images/logonsbig.png" width="30" height="30" class="ml-3" alt=""></a>
+                        <a href="#"><img src="images/medsos/ig.png" width="30" height="30" alt=""></a>
+                        <a href="#"><img src="images/medsos/fb.png" width="30" height="30" class="ml-3" alt=""></a>
+                        <a href="#"><img src="images/medsos/twt.png" width="30" height="30" class="ml-3" alt=""></a>
+                        <a href="#"><img src="images/medsos/yt.png" width="30" height="30" class="ml-3" alt=""></a>
+                        <a href="#"><img src="images/medsos/path.png" width="30" height="30" class="ml-3" alt=""></a>
+                        <a href="#"><img src="images/medsos/line.png" width="30" height="30" class="ml-3" alt=""></a>
                         </div>
                     </div>
                     </div>
                 </div>
 
-                <div class="col-sm-7">
+                <div class="col-sm-4">
+                    <div class="card bg-dark text-light" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Informasi & Layanan.</h5>
+                        <p class="card-text small mb-0">Tentang Kami</p>
+                        <p class="card-text small mb-0">Syarat dan Ketentuan</p>
+                        <p class="card-text small mb-0">Alur Niaga Sayuran</p>
+                        <p class="card-text small mb-0">Partner</p>
+                        <p class="card-text small">FAQ</p>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
                     <div class="card bg-dark text-light" style="width: 100%;">
                     <div class="card-body">
                         <h5 class="card-title">Tentang Niaga Sayur.</h5>
-                        <p class="card-text small">Niaga Sayur dibuat untuk memenuhi tugas besar rekweb. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                        <p class="card-text small">Niaga Sayur dibuat untuk memenuhi tugas besar rekweb. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                        Laoreet sit amet cursus sit. Viverra justo nec ultrices dui sapien eget mi proin. Urna cursus eget nunc scelerisque viverra mauris.
+                        </p>
                     </div>
                     </div>
                 </div>
