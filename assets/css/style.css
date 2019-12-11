@@ -54,3 +54,11 @@ section {
     width: auto;
     height: 150px;
 }
+
+.infoLayanan li a{
+    color: white;
+}
+
+.infoLayanan li a:hover{
+    color: darkgrey;
+}
