@@ -1,3 +1,54 @@
+  <!-- Footer -->
+  <div class="container-fluid bg-dark mt-5">
+
+      <div class="row p-3">
+
+          <div class="col-sm-4 text-light">
+              <h5 class="card-title">Kontak.</h5>
+              <p class="card-text mb-0 small">Bandung Setiabudhi.</p>
+              <p class="card-text mb-0 small">Call Center: 029317492746</p>
+              <p class="card-text small">SMS/WA: 092371846283</p>
+              <div class="card-text d-inline-block">
+                  <a href="#"><img src="images/medsos/ig.png" width="30" height="30" alt=""></a>
+                  <a href="#"><img src="images/medsos/fb.png" width="30" height="30" class="ml-3" alt=""></a>
+                  <a href="#"><img src="images/medsos/twt.png" width="30" height="30" class="ml-3" alt=""></a>
+                  <a href="#"><img src="images/medsos/yt.png" width="30" height="30" class="ml-3" alt=""></a>
+                  <a href="#"><img src="images/medsos/path.png" width="30" height="30" class="ml-3" alt=""></a>
+                  <a href="#"><img src="images/medsos/line.png" width="30" height="30" class="ml-3" alt=""></a>
+              </div>
+          </div>
+
+          <div class="col-sm-4 text-light">
+              <h5 class="card-title">Informasi & Layanan.</h5>
+              <p class="card-text small mb-0">Tentang Kami</p>
+              <p class="card-text small mb-0">Syarat dan Ketentuan</p>
+              <p class="card-text small mb-0">Alur Niaga Sayuran</p>
+              <p class="card-text small mb-0">Partner</p>
+              <p class="card-text small">FAQ</p>
+          </div>
+
+          <div class="col-sm-4 text-light">
+              <h5 class="card-title">Tentang Niaga Sayur.</h5>
+              <p class="card-text small">Niaga Sayur dibuat untuk memenuhi tugas besar rekweb. Lorem ipsum dolor
+                  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                  magna aliqua. Ut enim ad minim veniam
+                  Laoreet sit amet cursus sit. Viverra justo nec ultrices dui sapien eget mi proin. Urna cursus
+                  eget nunc scelerisque viverra mauris.
+              </p>
+          </div>
+
+          <div class="container my-auto">
+              <div class="copyright text-center my-auto text-light small">
+                  <span>Copyright &copy; Rekayasa Web Team | Universitas Pasundan <?= date('Y'); ?></span>
+              </div>
+          </div>
+
+      </div>
+
+  </div>
+  <!-- Akhir Footer -->
+
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
