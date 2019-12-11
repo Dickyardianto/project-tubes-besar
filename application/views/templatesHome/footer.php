@@ -5,8 +5,8 @@
 
           <div class="col-sm-4 text-light">
               <h5 class="card-title">Kontak</h5>
-              <p class="card-text mb-0 small"><i class="fas fa-map-marker-alt"> Jl. Dr. Setiabudi No.193, Kota Bandung</i></p>
-              <p class="card-text mb-0 small"><i class="fas fa-phone-alt"></i>  029317492746</p>
+              <p class="card-text mb-2 small"><i class="fas fa-map-marker-alt"> Jl. Dr. Setiabudi No.193, Kota Bandung</i></p>
+              <p class="card-text mb-2 small"><i class="fas fa-phone-alt"></i>  029317492746</p>
               <p class="card-text small"><i class="fab fa-whatsapp"></i>  +62 320 574</p>
               <div class="card-text d-inline-block">
                   <a href="#"><img src="images/medsos/ig.png" width="30" height="30" alt=""></a>
