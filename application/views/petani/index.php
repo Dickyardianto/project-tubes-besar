@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <a href="petani/editProfile" class="btn btn-primary mt-4">Edit profile</a>
+        <!-- <a href="petani/editProfile" class="btn btn-primary mt-4">Edit profile</a> -->
     </div>
 
 

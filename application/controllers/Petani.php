@@ -66,8 +66,8 @@ class Petani extends CI_Controller
             $upload_image = $_FILES['gambar']['name'];
             if ($upload_image) {
                 $namafile = "file_" . time();
-                $config['allowed_types'] = 'gif|jpg|png';
-                $config['max_size']     = '3048';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size']     = '8048';
                 $config['upload_path'] = './assets/img/gambar-sayur/';
                 $config['file_name'] = $namafile;
 
@@ -89,7 +89,7 @@ class Petani extends CI_Controller
                     $this->db->insert('sayuran', $data);
                 } else {
                     // echo $this->upload->display_errors();
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Gambar terlalu besar');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Periksa ukuran gambar !');
                     // redirect('petani/tampilSayuran');
                     redirect('petani/tampilSayuran');
                 }

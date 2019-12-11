@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min2.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> -->
+
 
 </head>
 

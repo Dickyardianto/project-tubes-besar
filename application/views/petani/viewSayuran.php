@@ -28,7 +28,7 @@
                 <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newSubMenuModal">Tambah
                     sayuran</a>
 
-                <table class="table table-hover" id="dataTables">
+                <table class="table table-bordered" id="dataTables">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
