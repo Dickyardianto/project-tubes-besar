@@ -39,7 +39,7 @@
 
 <!-- Content Diskon-->
 <div class="container">
-    <h3 class="h3">Diskon Sayur</h3>
+    <h3 class="h3" id="diskonSayur">Diskon Sayur</h3>
     <div class="row">
         <div class="col-md-3 col-sm-6">
             <div class="product-grid">

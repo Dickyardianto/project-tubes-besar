@@ -113,8 +113,11 @@
             <?= form_open_multipart('petani/tambahSayuran'); ?>
             <div class="modal-body">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="jenis-sayur" name="jenis-sayur"
-                        placeholder="Jenis sayur">
+                        <select class="form-control" id="jenis-sayur" name="jenis-sayur">
+                            <option>Jenis Sayur</option>
+                            <option>Sayur Buah</option>
+                            <option>Sayur Daun</option>
+                        </select>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" id="nama-sayur" name="nama-sayur" placeholder="Nama sayur">
