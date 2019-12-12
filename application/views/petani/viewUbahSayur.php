@@ -25,12 +25,20 @@
                 <?= form_open_multipart('petani/ubahSayur/' . $sayur['id']); ?>
                 <div class="form-row">
                     <div class="col-5">
+                        <!-- Coba -->
                         <label for="exampleFormControlInput1">Jenis sayur</label>
-                        <input type="hidden" name="id" value="<?= $sayur['id']; ?>"></<input>
-                        <input type="text" name="jenis-sayur" id="jenis-sayur" class="form-control"
-                            value="<?= $sayur['jenis_sayur']; ?>">
-                        <small class="form-text text-danger"><?= form_error('jenis-sayur'); ?></small>
+                        <select class="form-control" id="satuan" name="satuan">
+                            <?php foreach ($kategori as $k) : ?>
+                            <?php if ($k == $sayur['jenis_sayur']) : ?>
+                            <option value="<?php echo $k ?>" selected><?php echo $k; ?></option>
+                            <?php else : ?>
+                            <option value="<?= $k ?>"><?= $k ?></option>
+                            <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
 
+
+                        <!-- Akhir Coba -->
                         <label for="exampleFormControlInput1">Nama sayur</label>
                         <input type="text" name="nama-sayur" id="nama-sayur" class="form-control"
                             value="<?= $sayur['nama_sayur']; ?>">

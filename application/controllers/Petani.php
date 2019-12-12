@@ -139,6 +139,14 @@ class Petani extends CI_Controller
             'Ons'
         ];
 
+        $data['kategori'] = [
+            'Sayur Buah',
+            'Sayur Daun',
+            'Sayur Batang',
+            'Sayur Akar'
+        ];
+
+
         $data['sayur'] = $this->petani->getSayurById($id);
 
         if ($this->form_validation->run() == false) {
