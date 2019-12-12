@@ -39,6 +39,7 @@
 
 <!-- Content -->
 <div class="container">
+    <h4 class="mb-3" id="sarBaru">Sayuran Terbaru</h4>
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuran as $sayur) : ?>
@@ -63,3 +64,31 @@
     </div>
 </div>
 <!-- Akhir Content -->
+
+<!-- Content Diskon-->
+<div class="container">
+    <h4 class="mb-3" id="sarDiskon">Diskon Sayur Minggu Ini   </h4>
+    <div class="row">
+        <!-- menampilkan berbagai macam sayuran -->
+        <?php foreach ($sayuran as $sayur) : ?>
+        <div class="col-sm-2 textStyle">
+            <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
+                <div class="card mb-3 coba">
+                    <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><?= $sayur['deskripsi'] ?> </p>
+                        <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
+                            (/<?= $sayur['satuan'] . ")" ?></p>
+                        <p class="card-text"><small class="text-muted">ditambahkan pada
+
+                                <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+<!-- Akhir Content Diskon-->
