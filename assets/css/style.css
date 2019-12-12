@@ -67,10 +67,3 @@ section {
     color: darkgrey;
 }
 
-.navbar{
-        background-color: transparent;
-        border: none;
-        color: white;
-        z-index: 100;
-        transition: background-color 1s ease 0s;
-}
