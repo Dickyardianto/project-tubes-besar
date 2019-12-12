@@ -49,9 +49,13 @@
                             </div>
                             <div class="col-sm-6">
                                 <select class="form-control" id="satuan" name="satuan">
-                                    <option selected>Satuan</option>
-                                    <option value="Kg">(/Kg)</option>
-                                    <option value="Ons">(/Ons)</option>
+                                    <?php foreach ($satuan as $s) : ?>
+                                    <?php if ($s == $sayur['satuan']) : ?>
+                                    <option value="<?php echo $s ?>" selected><?php echo $s; ?></option>
+                                    <?php else : ?>
+                                    <option value="<?= $s ?>"><?= $s ?></option>
+                                    <?php endif; ?>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>

@@ -133,8 +133,13 @@ class Petani extends CI_Controller
         $data['titleSidebar'] = 'Petani';
         $data['icon'] = '<i class="fas fa-book-reader"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['sayur'] = $this->petani->getSayurById($id);
 
+        $data['satuan'] = [
+            'Kg',
+            'Ons'
+        ];
+
+        $data['sayur'] = $this->petani->getSayurById($id);
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
