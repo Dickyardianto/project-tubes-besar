@@ -38,8 +38,8 @@
                         <a class="nav-item nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kategori</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Diskon Sayur</a>
-                            <a class="dropdown-item" href="#">Sayur Lokal</a>
                             <a class="dropdown-item" href="#">Rekomendasi Sayur</a>
+                            <a class="dropdown-item" href="#">Sayur Lokal</a>
                             <a class="dropdown-item" href="#">Sayur Laris</a>
                         </div>
                     </div>
