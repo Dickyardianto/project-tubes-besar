@@ -39,28 +39,38 @@
 
 <!-- Content Diskon-->
 <div class="container">
-    <h4 class="mb-3" id="sarDiskon">Diskon Sayur</h4>
+    <h3 class="h3">Diskon Sayur</h3>
     <div class="row">
-        <!-- menampilkan berbagai macam sayuran -->
-        <?php foreach ($sayuran as $sayur) : ?>
-        <div class="col-sm-2 textStyle">
-            <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
-                <div class="card mb-3 coba">
-                    <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text"><?= $sayur['deskripsi'] ?> </p>
-                        <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
-                            (/<?= $sayur['satuan'] . ")" ?></p>
-                        <p class="card-text"><small class="text-muted">ditambahkan pada
-
-                                <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
-                        </p>
-                    </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="<?= base_url('assets/img/gambar-sayur') . "/file_1575968693.jpg"; ?>">
+                        <img class="pic-2" src="<?= base_url('assets/img/gambar-sayur') . "/file_1575968843.jpg";?>">
+                    </a>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <span class="product-new-label">Sale</span>
+                    <span class="product-discount-label">20%</span>
                 </div>
-            </a>
+                <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star disable"></li>
+                </ul>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">Tomat Lembang</a></h3>
+                    <div class="price">Rp. 10.000
+                        <span>Rp20.000</span>
+                    </div>
+                    <a class="add-to-cart" href="">+ Add To Cart</a>
+                </div>
+            </div>
         </div>
-        <?php endforeach; ?>
     </div>
 </div>
 <!-- Akhir Diskon-->
@@ -148,3 +158,5 @@
     </div>
 </div>
 <!-- Sayur Laris -->
+
+
