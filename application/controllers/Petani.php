@@ -124,7 +124,7 @@ class Petani extends CI_Controller
     public function ubahSayur($id)
     {
 
-        $this->form_validation->set_rules('jenis-sayur', 'Jenis sayur', 'required|trim');
+        // $this->form_validation->set_rules('jenis-sayur', 'Jenis sayur', 'required|trim');
         $this->form_validation->set_rules('nama-sayur', 'Nama sayur', 'required|trim');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi sayur', 'required|trim');
         $this->form_validation->set_rules('harga', 'Harga sayur', 'required|trim');
@@ -133,6 +133,7 @@ class Petani extends CI_Controller
         $data['titleSidebar'] = 'Petani';
         $data['icon'] = '<i class="fas fa-book-reader"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['sayur'] = $this->petani->getSayurById($id);
 
         $data['satuan'] = [
             'Kg',
@@ -147,7 +148,6 @@ class Petani extends CI_Controller
         ];
 
 
-        $data['sayur'] = $this->petani->getSayurById($id);
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
@@ -157,7 +157,7 @@ class Petani extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $id_petani = $data['user']['id'];
-            $jenis_sayur = htmlspecialchars($this->input->post('jenis-sayur', true));
+            $jenis_sayur = $this->input->post('jenis-sayur');
             $nama_sayur = htmlspecialchars($this->input->post('nama-sayur', true));
             $deskripsi = htmlspecialchars($this->input->post('deskripsi', true));
             $harga = htmlspecialchars($this->input->post('harga', true));
