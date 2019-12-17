@@ -16,8 +16,13 @@ class Pembeli extends CI_Controller
         $data['title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['sayuran'] = $this->petani->getAllSayuran();
+
+        $data['sayuranBuahSorting'] = $this->petani->getBySayurBuah();
+        $data['sayuranDaunSorting'] = $this->petani->getBySayurDaun();
+        $data['sayuranBatangSorting'] = $this->petani->getBySayurBatang();
+        $data['sayuranAkarSorting'] = $this->petani->getBySayurAkar();
         $this->load->view('templatesHome/header', $data);
-        $this->load->view('pembeli/index', $data);
+        $this->load->view('home/viewHome', $data);
         $this->load->view('templatesHome/footer');
     }
 }

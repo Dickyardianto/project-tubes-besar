@@ -54,11 +54,31 @@
                         <a class="navbar-brand mr-4 text-light" href="#"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                     <?php if ($this->session->userdata('email')) : ?>
-                    <li><a href="<?= base_url() ?>auth/logout" class="btn btn-outline-light my-2 my-sm-0">Logout</a>
-                        <?php else : ?>
+                    <!-- Coba -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user['nama']; ?></span>
+                            <img class="img-profile rounded-circle"
+                                src="<?= base_url('assets/img/profile/') . $user['image']; ?>" width="30" height="30">
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="<?= base_url() ?>auth/logout">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Akhir Coba -->
+                    <?php else : ?>
                     <li><a href="<?= base_url() ?>auth" class="btn btn-outline-light my-2 my-sm-0">Login</a></li>
                     </li>
                     <?php endif; ?>
+
+
                 </ul>
             </div>
         </nav>

@@ -91,7 +91,6 @@
                         <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
                             (/<?= $sayur['satuan'] . ")" ?></p>
                         <p class="card-text"><small class="text-muted">ditambahkan pada
-
                                 <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
                         </p>
                     </div>
@@ -119,7 +118,6 @@
                         <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
                             (/<?= $sayur['satuan'] . ")" ?></p>
                         <p class="card-text"><small class="text-muted">ditambahkan pada
-
                                 <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
                         </p>
                     </div>
@@ -147,7 +145,6 @@
                         <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
                             (/<?= $sayur['satuan'] . ")" ?></p>
                         <p class="card-text"><small class="text-muted">ditambahkan pada
-
                                 <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
                         </p>
                     </div>
@@ -175,7 +172,6 @@
                         <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
                             (/<?= $sayur['satuan'] . ")" ?></p>
                         <p class="card-text"><small class="text-muted">ditambahkan pada
-
                                 <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
                         </p>
                     </div>
