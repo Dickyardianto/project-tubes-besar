@@ -22,3 +22,11 @@ function is_logged_in()
         }
     }
 }
+
+function is_logged_in_pembeli()
+{
+    $ci = get_instance();
+    if (!$ci->session->userdata('email')) {
+        redirect('auth');
+    }
+}

@@ -91,7 +91,7 @@ class Auth extends CI_Controller
                         redirect('petani');
                     } else if ($user['role_id'] == 1) {
                         redirect('admin');
-                    } else {
+                    } else if ($user['role_id'] == 2) {
                         redirect('pembeli');
                     }
                 } else {
