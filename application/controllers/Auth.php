@@ -35,7 +35,7 @@ class Auth extends CI_Controller
         }
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required');
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
             'matches' => 'Password tidak sama !',
@@ -117,7 +117,7 @@ class Auth extends CI_Controller
         $this->session->unset_userdata('role_id');
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You has ben logout');
         // Meredirect ke controller Auth/method index
-        redirect('auth');
+        redirect('home');
     }
 
     public function blocked()

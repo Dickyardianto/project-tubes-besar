@@ -44,7 +44,6 @@
                             <a class="dropdown-item" href="#">Sayur Akar</a>
                         </div>
                     </div>
-
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2 ml-3" type="search" placeholder="cari sayur disini !"
                             aria-label="Search">
@@ -54,16 +53,12 @@
                     <li>
                         <a class="navbar-brand mr-4 text-light" href="#"><i class="fas fa-shopping-cart"></i></a>
                     </li>
-
                     <?php if ($this->session->userdata('email')) : ?>
                     <li><a href="<?= base_url() ?>auth/logout" class="btn btn-outline-light my-2 my-sm-0">Logout</a>
                         <?php else : ?>
                     <li><a href="<?= base_url() ?>auth" class="btn btn-outline-light my-2 my-sm-0">Login</a></li>
-
                     </li>
                     <?php endif; ?>
-
-
                 </ul>
             </div>
         </nav>

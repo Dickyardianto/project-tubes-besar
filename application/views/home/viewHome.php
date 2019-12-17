@@ -46,7 +46,7 @@
                 <div class="product-image">
                     <a href="#">
                         <img class="pic-1" src="<?= base_url('assets/img/gambar-sayur') . "/file_1575968693.jpg"; ?>">
-                        <img class="pic-2" src="<?= base_url('assets/img/gambar-sayur') . "/file_1575968843.jpg";?>">
+                        <img class="pic-2" src="<?= base_url('assets/img/gambar-sayur') . "/file_1575968843.jpg"; ?>">
                     </a>
                     <ul class="social">
                         <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
@@ -75,12 +75,12 @@
 </div>
 <!-- Akhir Diskon-->
 
-<!-- Rekomendasi Sayur Content -->
+<!-- Sayur Buah -->
 <div class="container">
-    <h4 class="mb-3 mt-4" id="rekSayur">Rekomendasi Sayur</h4>
+    <h4 class="mb-3 mt-4" id="rekSayur">Sayur Buah</h4>
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
-        <?php foreach ($sayuran as $sayur) : ?>
+        <?php foreach ($sayuranBuahSorting as $sayur) : ?>
         <div class="col-sm-2 textStyle">
             <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
                 <div class="card mb-3 coba">
@@ -101,14 +101,14 @@
         <?php endforeach; ?>
     </div>
 </div>
-<!-- Rekomendasi Sayur Content Diskon-->
+<!-- Sayur Buah -->
 
-<!-- Sayur Lokal -->
+<!-- Sayur Daun -->
 <div class="container">
-    <h4 class="mb-3 mt-4" id="sarLokal">Sayur Lokal</h4>
+    <h4 class="mb-3 mt-4" id="sarLokal">Sayur Daun</h4>
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
-        <?php foreach ($sayuran as $sayur) : ?>
+        <?php foreach ($sayuranDaunSorting as $sayur) : ?>
         <div class="col-sm-2 textStyle">
             <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
                 <div class="card mb-3 coba">
@@ -129,14 +129,14 @@
         <?php endforeach; ?>
     </div>
 </div>
-<!-- Sayur Content Lokal-->
+<!-- Sayur Daun-->
 
-<!-- Sayur Laris -->
+<!-- Sayur Batang -->
 <div class="container">
-    <h4 class="mb-3 mt-4" id="sarLaris">Sayur Laris</h4>
+    <h4 class="mb-3 mt-4" id="sarLaris">Sayur Batang</h4>
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
-        <?php foreach ($sayuran as $sayur) : ?>
+        <?php foreach ($sayuranBatangSorting as $sayur) : ?>
         <div class="col-sm-2 textStyle">
             <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
                 <div class="card mb-3 coba">
@@ -157,6 +157,32 @@
         <?php endforeach; ?>
     </div>
 </div>
-<!-- Sayur Laris -->
+<!-- Sayur Batang -->
 
+<!-- Sayur Akar -->
+<div class="container">
+    <h4 class="mb-3 mt-4" id="sarLaris">Sayur Akar</h4>
+    <div class="row">
+        <!-- menampilkan berbagai macam sayuran -->
+        <?php foreach ($sayuranAkarSorting as $sayur) : ?>
+        <div class="col-sm-2 textStyle">
+            <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
+                <div class="card mb-3 coba">
+                    <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><?= $sayur['deskripsi'] ?> </p>
+                        <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
+                            (/<?= $sayur['satuan'] . ")" ?></p>
+                        <p class="card-text"><small class="text-muted">ditambahkan pada
 
+                                <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+<!-- Akhir sayur akar -->
