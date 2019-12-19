@@ -1,5 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
+    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('message'); ?>"></div>
 
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
@@ -14,7 +15,7 @@
             <?php endif; ?>
             <!-- Tampilkan pesan error -->
 
-            <?= $this->session->flashdata('message'); ?>
+
 
             <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newSubMenuModal">Tambah submenu
                 baru</a>
@@ -44,8 +45,8 @@
                         <td>
                             <a href="<?= base_url(); ?>menu/ubahSubMenu/<?= $sm['id']; ?>"
                                 class="badge badge-success">ubah</a>
-                            <a href="<?= base_url(); ?>menu/deleteSubMenu/<?= $sm['id']; ?>" class="badge badge-danger"
-                                onclick="return confirm('yakin ? ');">hapus</a>
+                            <a href="<?= base_url(); ?>menu/deleteSubMenu/<?= $sm['id']; ?>"
+                                class="badge badge-danger tombol-hapus">hapus</a>
                         </td>
                     </tr>
                     <?php $i++; ?>

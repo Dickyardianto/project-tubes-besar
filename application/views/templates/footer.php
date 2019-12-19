@@ -65,6 +65,8 @@ $('.custom-file-input').on('change', function() {
 <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
+<script src="<?= base_url() ?>assets/dist/sweetalert2.all.min.js"></script>
+<script src="<?= base_url() ?>assets/js/script.js"></script>
 
 <script>
 $(document).ready(function() {
@@ -76,6 +78,7 @@ $(document).ready(function() {
     });
 });
 </script>
+
 
 </body>
 

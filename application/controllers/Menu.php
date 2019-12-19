@@ -99,7 +99,7 @@ class Menu extends CI_Controller
                 'is_active' => $this->input->post('is_active')
             ];
             $this->db->insert('user_sub_menu', $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Submenu baru berhasil ditambah </div>');
+            $this->session->set_flashdata('message', 'Ditambahkan');
             // Meredirect ke controller Auth/method index
             redirect('menu/subMenu');
         }
@@ -109,7 +109,7 @@ class Menu extends CI_Controller
     public function deleteSubMenu($id)
     {
         $this->menu->hapusDataSubMenu($id);
-        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Submenu berhasil dihapus</div>');
+        $this->session->set_flashdata('message', 'Dihapus');
         redirect('menu/subMenu');
     }
 
@@ -134,7 +134,7 @@ class Menu extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $this->menu->ubahSubMenuManagement();
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Submenu berhasil diubah </div>');
+            $this->session->set_flashdata('message', 'Diubah');
             redirect('menu/subMenu');
         }
     }
