@@ -1,14 +1,11 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
+    <div class="flash-datas" data-flashdatas="<?= $this->session->flashdata('message'); ?>"></div>
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
     <div class="row">
         <div class="col-lg-6">
-
-            <?= $this->session->flashdata('message'); ?>
-
             <?= form_open_multipart('admin/editProfile'); ?>
             <div class="form-group row">
                 <label for="email" class="col-sm-2 col-form-label">Email</label>

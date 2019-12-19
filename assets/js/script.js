@@ -1,23 +1,3 @@
-// function coba() {
-//     const Toast = Swal.mixin({
-//         toast: true,
-//         position: 'top-end',
-//         showConfirmButton: false,
-//         timer: 3000,
-//         timerProgressBar: true,
-//         onOpen: (toast) => {
-//             toast.addEventListener('mouseenter', Swal.stopTimer)
-//             toast.addEventListener('mouseleave', Swal.resumeTimer)
-//         }
-//     })
-
-//     Toast.fire({
-//         icon: 'success',
-//         title: 'Signed in successfully'
-//     })
-
-// }
-
 const flashdata = $('.flash-data').data('flashdata');
 
 if (flashdata) {
@@ -36,7 +16,7 @@ $('.tombol-hapus').on('click', function (e) {
 
     Swal.fire({
         title: 'Apakah kamu yakin ?',
-        text: "hapus submenu ini !",
+        text: "ingin menghapus ini !",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -48,3 +28,36 @@ $('.tombol-hapus').on('click', function (e) {
         }
     })
 });
+
+const flashdatas = $('.flash-datas').data('flashdatas');
+
+if (flashdatas) {
+    Swal.fire({
+        title: 'Profil',
+        text: 'Berhasil ' + flashdatas,
+        icon: 'success'
+    });
+
+}
+
+const flashdataMenu = $('.flash-dataMenu').data('flashdata');
+
+if (flashdataMenu) {
+    Swal.fire({
+        title: 'Menu',
+        text: 'Berhasil ' + flashdataMenu,
+        icon: 'success'
+    });
+
+}
+
+const flashdataPP = $('.flash-dataPP').data('flashdata');
+
+if (flashdataPP) {
+    Swal.fire({
+        title: 'Data',
+        text: 'Berhasil ' + flashdataPP,
+        icon: 'success'
+    });
+
+}

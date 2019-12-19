@@ -1,6 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
+    <div class="flash-dataPP" data-flashdata="<?= $this->session->flashdata('message'); ?>"></div>
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
@@ -38,8 +38,8 @@
                         <td><?= $m['alamat']; ?></td>
                         <td><?= $m['email']; ?></td>
                         <td>
-                            <a href="<?= base_url(); ?>admin/hapusPembeli/<?= $m['id']; ?>" class="badge badge-danger"
-                                onclick="return confirm('yakin ? ');">hapus</a>
+                            <a href="<?= base_url(); ?>admin/hapusPembeli/<?= $m['id']; ?>"
+                                class="badge badge-danger tombol-hapus">hapus</a>
                         </td>
                     </tr>
                     <?php $i++; ?>

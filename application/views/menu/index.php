@@ -1,6 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
+    <div class="flash-dataMenu" data-flashdata="<?= $this->session->flashdata('message'); ?>"></div>
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
@@ -9,7 +9,6 @@
         <div class="col-lg">
             <!-- Tampilkan pesan error -->
             <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
-            <?= $this->session->flashdata('message'); ?>
 
             <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newMenuModal">Tambah menu baru</a>
 
@@ -31,8 +30,8 @@
                             <a href="<?= base_url() ?>menu/ubahMenuManagement/<?= $m['id']; ?>"
                                 class="badge badge-success">ubah
                             </a>
-                            <a href="<?= base_url(); ?>menu/hapusMenu/<?= $m['id']; ?>" class="badge badge-danger"
-                                onclick="return confirm('yakin ? ');">hapus</a>
+                            <a href="<?= base_url(); ?>menu/hapusMenu/<?= $m['id']; ?>"
+                                class="badge badge-danger tombol-hapus">hapus</a>
                         </td>
                     </tr>
                     <?php $i++; ?>

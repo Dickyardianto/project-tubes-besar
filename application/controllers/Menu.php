@@ -30,7 +30,7 @@ class Menu extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Menu baru ditambahkan  </div>');
+            $this->session->set_flashdata('message', 'Ditambahkan');
             // Meredirect ke controller Auth/method index
             redirect('menu');
         }
@@ -39,7 +39,7 @@ class Menu extends CI_Controller
     public function hapusMenu($id)
     {
         $this->menu->hapusDataMenuManagement($id);
-        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Menu berhasil dihapus </div>');
+        $this->session->set_flashdata('message', 'Dihapus');
         redirect('menu');
     }
 
@@ -61,7 +61,7 @@ class Menu extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $this->menu->ubahMenuManagement();
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Menu berhasil diubah </div>');
+            $this->session->set_flashdata('message', 'Diubah');
             redirect('menu');
         }
     }
