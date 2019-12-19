@@ -16,8 +16,8 @@
 
             <?= $this->session->flashdata('message'); ?>
 
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newSubMenuModal">Add New
-                Submenu</a>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newSubMenuModal">Tambah submenu
+                baru</a>
 
             <table class="table table-hover" id="dataTables">
                 <thead>
@@ -43,9 +43,9 @@
                         <td><?= $sm['is_active']; ?></td>
                         <td>
                             <a href="<?= base_url(); ?>menu/ubahSubMenu/<?= $sm['id']; ?>"
-                                class="badge badge-success">edit</a>
+                                class="badge badge-success">ubah</a>
                             <a href="<?= base_url(); ?>menu/deleteSubMenu/<?= $sm['id']; ?>" class="badge badge-danger"
-                                onclick="return confirm('yakin ? ');">delete</a>
+                                onclick="return confirm('yakin ? ');">hapus</a>
                         </td>
                     </tr>
                     <?php $i++; ?>
@@ -69,7 +69,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="newSubMenuModalLabel">Add New SubMenu</h5>
+                <h5 class="modal-title" id="newSubMenuModalLabel">Tambah submenu baru</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -81,7 +81,7 @@
                     </div>
                     <div class="form-group">
                         <select name="menu_id" id="menu_id" class="form-control">
-                            <option value="">Select menu</option>
+                            <option value="">Pilih menu</option>
                             <?php foreach ($menu as $m) : ?>
                             <option value="<?= $m['id'] ?>"><?= $m['menu'] ?></option>
                             <?php endforeach; ?>
@@ -102,8 +102,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Tambah</button>
                 </div>
             </form>
         </div>

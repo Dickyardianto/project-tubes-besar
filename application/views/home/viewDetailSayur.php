@@ -4,7 +4,7 @@
     <!-- Page Heading -->
     <div class="row">
         <div class="col-lg-8">
-            <div class="card mb-3 top-margin shadow">
+            <div class="card mb-3 top-margin">
                 <div class="row no-gutters">
                     <div class="col-md-4">
                         <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayuran['gambar_sayur']; ?>"
@@ -21,12 +21,14 @@
                             <li class="list-group-item list-group-item-warning">Nikmati tawaran terbaik dengan bertemu
                                 petani
                                 langsung</li>
-                            <div class="row mb-0">
+
+                            <input type="number" class="form-control mt-2 mb-4 col-2" value="1">
+                            <!-- <div class="row mb-0">
                                 <div class="col-md text-center mt-3">
                                     <a href=""><button type="button" class="btn btn-success btn-block">Beli
                                             Sekarang</button></a><br>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="row warna" style="margin-top: -15px">
                                 <div class="col-md mb-1">
@@ -122,7 +124,7 @@
             <!-- menampilkan berbagai macam sayuran -->
             <?php foreach ($tampilSayur as $sayur) : ?>
             <div class="col-sm-2 textStyle">
-                <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
+                <a href="<?= base_url() ?>transaksi/detailSayur/<?= $sayur['id']; ?>">
                     <div class="card mb-3 coba">
                         <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
                             class="card-img-top" alt="...">

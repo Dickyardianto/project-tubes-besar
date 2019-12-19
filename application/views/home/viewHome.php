@@ -82,7 +82,8 @@
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuranBuahSorting as $sayur) : ?>
         <div class="col-sm-2 textStyle">
-            <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
+            <?php if (!$this->session->userdata('email')) : ?>
+            <a href="<?= base_url() ?>auth">
                 <div class="card mb-3 coba">
                     <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
                         class="card-img-top" alt="...">
@@ -96,6 +97,23 @@
                     </div>
                 </div>
             </a>
+            <?php else : ?>
+            <a href="<?= base_url() ?>transaksi/detailSayur/<?= $sayur['id']; ?>">
+                <div class="card mb-3 coba">
+                    <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><?= $sayur['deskripsi'] ?> </p>
+                        <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
+                            (/<?= $sayur['satuan'] . ")" ?></p>
+                        <p class="card-text"><small class="text-muted">ditambahkan pada
+                                <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <?php endif; ?>
+
         </div>
         <?php endforeach; ?>
     </div>
@@ -109,7 +127,8 @@
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuranDaunSorting as $sayur) : ?>
         <div class="col-sm-2 textStyle">
-            <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
+            <?php if (!$this->session->userdata('email')) : ?>
+            <a href="<?= base_url() ?>auth">
                 <div class="card mb-3 coba">
                     <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
                         class="card-img-top" alt="...">
@@ -123,6 +142,22 @@
                     </div>
                 </div>
             </a>
+            <?php else : ?>
+            <a href="<?= base_url() ?>transaksi/detailSayur/<?= $sayur['id']; ?>">
+                <div class="card mb-3 coba">
+                    <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><?= $sayur['deskripsi'] ?> </p>
+                        <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
+                            (/<?= $sayur['satuan'] . ")" ?></p>
+                        <p class="card-text"><small class="text-muted">ditambahkan pada
+                                <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <?php endif; ?>
         </div>
         <?php endforeach; ?>
     </div>
@@ -136,7 +171,8 @@
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuranBatangSorting as $sayur) : ?>
         <div class="col-sm-2 textStyle">
-            <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
+            <?php if (!$this->session->userdata('email')) : ?>
+            <a href="<?= base_url() ?>auth">
                 <div class="card mb-3 coba">
                     <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
                         class="card-img-top" alt="...">
@@ -150,6 +186,22 @@
                     </div>
                 </div>
             </a>
+            <?php else : ?>
+            <a href="<?= base_url() ?>transaksi/detailSayur/<?= $sayur['id']; ?>">
+                <div class="card mb-3 coba">
+                    <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><?= $sayur['deskripsi'] ?> </p>
+                        <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
+                            (/<?= $sayur['satuan'] . ")" ?></p>
+                        <p class="card-text"><small class="text-muted">ditambahkan pada
+                                <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <?php endif; ?>
         </div>
         <?php endforeach; ?>
     </div>
@@ -163,7 +215,8 @@
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuranAkarSorting as $sayur) : ?>
         <div class="col-sm-2 textStyle">
-            <a href="<?= base_url() ?>home/detailSayur/<?= $sayur['id']; ?>">
+            <?php if (!$this->session->userdata('email')) : ?>
+            <a href="<?= base_url() ?>auth">
                 <div class="card mb-3 coba">
                     <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
                         class="card-img-top" alt="...">
@@ -177,6 +230,22 @@
                     </div>
                 </div>
             </a>
+            <?php else : ?>
+            <a href="<?= base_url() ?>transaksi/detailSayur/<?= $sayur['id']; ?>">
+                <div class="card mb-3 coba">
+                    <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><?= $sayur['deskripsi'] ?> </p>
+                        <p style="color: #d71149;">Rp. <?= number_format($sayur['harga']); ?>
+                            (/<?= $sayur['satuan'] . ")" ?></p>
+                        <p class="card-text"><small class="text-muted">ditambahkan pada
+                                <?= date('d F Y', $sayur['tanggal_rilis']); ?></small></p>
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <?php endif; ?>
         </div>
         <?php endforeach; ?>
     </div>

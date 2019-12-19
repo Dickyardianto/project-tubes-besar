@@ -25,16 +25,4 @@ class Home extends CI_Controller
         $this->load->view('home/viewHome', $data);
         $this->load->view('templatesHome/footer');
     }
-
-    public function detailSayur($id)
-    {
-        $data['title'] = 'Belanja sayur hemat hanya disini';
-        // $data['sayuran'] = $this->db->get('sayuran')->row_array();
-        $data['sayuran'] = $this->home->getSayurById($id);
-        $data['tampilSayur'] = $this->petani->getAllSayuran();
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $this->load->view('templatesHome/header', $data);
-        $this->load->view('home/viewDetailSayur', $data);
-        $this->load->view('templatesHome/footer');
-    }
 }
