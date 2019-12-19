@@ -94,7 +94,7 @@ class Petani extends CI_Controller
                     redirect('petani/tampilSayuran');
                 }
             }
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil ditambahkan');
+            $this->session->set_flashdata('message', 'Ditambahkan');
             // redirect('petani/tampilSayuran');
             redirect('petani/tampilSayuran');
         }
@@ -104,7 +104,7 @@ class Petani extends CI_Controller
     public function hapusSayur($id)
     {
         $this->petani->hapusDataSayur($id);
-        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data berhasil dihapus</div>');
+        $this->session->set_flashdata('message', 'Di hapus');
         redirect('petani/tampilSayuran');
     }
 
@@ -283,8 +283,8 @@ class Petani extends CI_Controller
             $this->db->set('nama', $name);
             $this->db->where('email', $email);
             $this->db->update('user');
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Your profile has been updated!</div>');
-            redirect('petani');
+            $this->session->set_flashdata('message', 'Diubah');
+            redirect('petani/editProfile');
         }
     }
 
