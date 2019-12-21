@@ -24,7 +24,7 @@
     <!-- Navbar/Header -->
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?= base_url(); ?>home">
                 <img src="<?= base_url(); ?>assets/vendor/Assets-Dhika/images/logo/logonsbig.png" width="30" height="30"
                     class="d-inline-block align-top" alt="">
                 Niaga Sayur</a>
@@ -38,10 +38,10 @@
                         <a class="nav-item nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kategori</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#diskonSayur">Sayur Daun</a>
-                            <a class="dropdown-item" href="#">Sayur Buah</a>
-                            <a class="dropdown-item" href="#">Sayur Batang</a>
-                            <a class="dropdown-item" href="#">Sayur Akar</a>
+                            <a class="dropdown-item scrolspy" href="#sayur-buah">Sayur Buah</a>
+                            <a class="dropdown-item scrolspy" href="#sayur-daun">Sayur Daun</a>
+                            <a class="dropdown-item scrolspy" href="#sayur-batang">Sayur Batang</a>
+                            <a class="dropdown-item scrolspy" href="#sayur-akar">Sayur Akar</a>
                         </div>
                     </div>
                     <form class="form-inline my-2 my-lg-0">

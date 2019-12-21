@@ -77,7 +77,7 @@
 
 <!-- Sayur Buah -->
 <div class="container">
-    <h4 class="mb-3 mt-4" id="rekSayur">Sayur Buah</h4>
+    <h4 class="mb-3 mt-4" id="sayur-buah">Sayur Buah</h4>
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuranBuahSorting as $sayur) : ?>
@@ -122,7 +122,7 @@
 
 <!-- Sayur Daun -->
 <div class="container">
-    <h4 class="mb-3 mt-4" id="sarLokal">Sayur Daun</h4>
+    <h4 class="mb-3 mt-4" id="sayur-daun">Sayur Daun</h4>
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuranDaunSorting as $sayur) : ?>
@@ -166,7 +166,7 @@
 
 <!-- Sayur Batang -->
 <div class="container">
-    <h4 class="mb-3 mt-4" id="sarLaris">Sayur Batang</h4>
+    <h4 class="mb-3 mt-4" id="sayur-batang">Sayur Batang</h4>
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuranBatangSorting as $sayur) : ?>
@@ -210,7 +210,7 @@
 
 <!-- Sayur Akar -->
 <div class="container">
-    <h4 class="mb-3 mt-4" id="sarLaris">Sayur Akar</h4>
+    <h4 class="mb-3 mt-4" id="sayur-akar">Sayur Akar</h4>
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuranAkarSorting as $sayur) : ?>
