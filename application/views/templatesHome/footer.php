@@ -63,6 +63,41 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
+
+  <script>
+$(document).ready(function() {
+    $('#result').html('');
+    // load_data();
+
+
+    function load_data(query) {
+        $.ajax({
+            url: "<?php echo base_url(); ?>home/fetch",
+            method: "POST",
+            data: {
+                query: query
+            },
+            success: function(data) {
+                $('#result').html(data);
+            }
+        })
+
+        // if () {
+
+        // }
+    }
+
+    $('#search-produk').keyup(function() {
+        var search = $(this).val();
+        if (search != '') {
+            load_data(search);
+            $('#coba').html('');
+        } else {
+            load_data();
+        }
+    });
+});
+  </script>
   </body>
 
   </html>

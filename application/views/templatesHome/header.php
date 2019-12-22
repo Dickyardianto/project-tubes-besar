@@ -46,7 +46,7 @@
                     </div>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2 ml-3" type="search" placeholder="cari sayur disini !"
-                            aria-label="Search">
+                            aria-label="Search" name="search-produk" id="search-produk">
                     </form>
                 </div>
                 <ul class="nav navbar-nav navbar-right">

@@ -1,5 +1,5 @@
 <!-- Slide -->
-<div class="container" style="margin-top:90px;">
+<div class="container" id="coba" style="margin-top:90px;">
     <div class="row mb-5">
         <div class="col-md-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -36,9 +36,10 @@
 </div>
 
 <!-- Akhir Slide -->
+<div id="result"></div>
 
 <!-- Content Diskon-->
-<div class="container">
+<!-- <div class="container">
     <h3 class="h3" id="diskonSayur">Diskon Sayur</h3>
     <div class="row">
         <div class="col-md-3 col-sm-6">
@@ -72,7 +73,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Akhir Diskon-->
 
 <!-- Sayur Buah -->
