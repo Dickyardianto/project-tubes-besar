@@ -5,8 +5,8 @@
               <h5 class="card-title">Kontak</h5>
               <p class="card-text mb-2 small"><i class="fas fa-map-marker-alt"> Jl. Dr. Setiabudi No.193, Kota
                       Bandung</i></p>
-              <p class="card-text mb-2 small"><i class="fas fa-phone-alt"></i> 029317492746</p>
-              <p class="card-text small"><i class="fab fa-whatsapp"></i> +62 320 574</p>
+              <p class="card-text mb-2 small"><i class="fas fa-phone-alt"></i> +62 320 574</p>
+              <p class="card-text small"><i class="fab fa-whatsapp"></i> 0821 6838 0859</p>
               <div class="card-text d-inline-block" style="font-size:30px;">
                   <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
                   <a href="#" class="text-light"><i class="fab fa-facebook-square"></i></a>
