@@ -84,7 +84,7 @@
         <?php foreach ($sayuranBuahSorting as $sayur) : ?>
         <div class="col-sm-2 textStyle">
             <?php if (!$this->session->userdata('email')) : ?>
-            <a href="<?= base_url() ?>auth">
+            <a href="<?= base_url() ?>auth" class="coba">
                 <div class="card mb-3 coba">
                     <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
                         class="card-img-top" alt="...">
