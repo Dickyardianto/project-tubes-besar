@@ -97,6 +97,26 @@ $(document).ready(function() {
         }
     });
 });
+
+
+$(document).ready(function() {
+    var cek = "http://localhost/projectTubesRekweb/transaksi/detailSayur/5"
+    var cek1 = "http://localhost/projectTubesRekweb/transaksi/detailSayur/1"
+    var search = $(location).attr('href');
+    console.log(search);
+
+    if (cek == search) {
+        $('#cobaDulu').html('');
+
+    }
+
+    if (cek1 == search) {
+        $('#cobaDulu').html('');
+        $('.drop').html('');
+
+    }
+
+});
   </script>
   </body>
 

@@ -36,7 +36,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav mr-auto">
-                    <div class="dropdown">
+                    <div class="dropdown drop">
                         <a class="nav-item nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kategori</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -46,7 +46,7 @@
                             <a class="dropdown-item scrolspy" href="#sayur-akar">Sayur Akar</a>
                         </div>
                     </div>
-                    <form class="form-inline my-2 my-lg-0">
+                    <form class="form-inline my-2 my-lg-0" id="cobaDulu">
                         <input class="form-control mr-sm-2 ml-3" type="search" placeholder="cari sayur disini !"
                             aria-label="Search" name="search-produk" id="search-produk">
                     </form>
