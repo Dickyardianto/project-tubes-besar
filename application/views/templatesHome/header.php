@@ -53,9 +53,16 @@
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <?php $keranjang = '<i class="navbar-brand mr-4 text-white" href=""><i class="fas fa-shopping-cart"> : '.$this->cart->total_items().' Sayur</i></i>'?>
+                        <?php $keranjang = '<i class="navbar-brand text-white" href="">
+                        <i class="fas fa-shopping-cart"> <span class="badge badge-danger badge-counter">' . $this->cart->total_items() . '</span></i></i>' ?>
+
+                        <?php if ($this->session->userdata('email')) : ?>
                         <?php echo anchor('transaksi/tampil_keranjang', $keranjang) ?>
+                        <?php else : ?>
+                        <?php echo anchor('auth', $keranjang) ?>
+                        <?php endif; ?>
                     </li>
+
                     <?php if ($this->session->userdata('email')) : ?>
                     <!-- Coba -->
                     <li class="nav-item dropdown no-arrow">
