@@ -53,7 +53,8 @@
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="navbar-brand mr-4 text-light" href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <?php $keranjang = '<i class="navbar-brand mr-4 text-white" href=""><i class="fas fa-shopping-cart"> : '.$this->cart->total_items().' Sayur</i></i>'?>
+                        <?php echo anchor('transaksi/tampil_keranjang', $keranjang) ?>
                     </li>
                     <?php if ($this->session->userdata('email')) : ?>
                     <!-- Coba -->

@@ -23,17 +23,13 @@
                                 langsung</li>
 
                             <input type="number" class="form-control mt-2 mb-4 col-2" value="1">
-                            <!-- <div class="row mb-0">
-                                <div class="col-md text-center mt-3">
-                                    <a href=""><button type="button" class="btn btn-success btn-block">Beli
-                                            Sekarang</button></a><br>
-                                </div>
-                            </div> -->
 
                             <div class="row warna" style="margin-top: -15px">
                                 <div class="col-md mb-1">
-                                    <a href=""><button type="button" class="btn btn-block">Tambahkan ke
-                                            keranjang</button></a>
+
+                                    <?php echo anchor('transaksi/tambah_keranjang/' .$sayuran['id'], '<button type="submit" class="btn btn-block">Tambahkan ke
+                                            keranjang</button></a>' ) ?>
+                                            
                                 </div>
                                 <div class="col-md">
                                     <a href=""><button type="button" class="btn btn-block">Chat
