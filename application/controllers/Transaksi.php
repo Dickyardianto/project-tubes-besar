@@ -48,4 +48,4 @@ class Transaksi extends CI_Controller
         $this->load->view('transaksi/index', $data);
         $this->load->view('templatesHome/footer');
     }
-}
+} 
