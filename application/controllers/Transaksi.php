@@ -108,6 +108,15 @@ class Transaksi extends CI_Controller
         redirect('transaksi/tampil_keranjang');
     }
 
+    function delete_cart($rowId)
+    {
+        $data = array(
+            'rowid' => $rowId,
+            'qty' => 0,
+        );
+        $this->cart->update($data);
+        redirect('transaksi/tampil_keranjang');
+    }
 
     public function isi_data_pesanan()
     {

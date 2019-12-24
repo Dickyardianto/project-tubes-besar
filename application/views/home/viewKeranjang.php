@@ -11,7 +11,8 @@
             <p class="card-text">Jumlah Pesanan : <?php echo $Keranjang['qty'] ?> <?= $Keranjang['satuan'] ?>
             </p>
             <p class="card-text">Harga : Rp <?php echo number_format($Keranjang['price'], 0, ',', '.') ?>,00</p>
-            <a href="" class="btn btn-danger float-right mt-3"><i class="fas fa-trash-alt"></i> Hapus</a>
+            <a href="<?= base_url('transaksi/delete_cart/') ?><?= $Keranjang['rowid'] ?>"
+                class="btn btn-danger float-right mt-3"><i class="fas fa-trash-alt"></i> Hapus</a>
 
 
         </div>
@@ -25,7 +26,7 @@
     <div align="right">
 
         <a href="<?php echo base_url('transaksi/hapus_keranjang') ?>" class="btn btn-danger"><i
-                class="fas fa-trash-alt"></i> Hapus Keranjang</a>
+                class="fas fa-trash-alt"></i> Hapus Semua Keranjang</a>
         <a href="<?php echo base_url() . 'pembeli/index' ?>" class="btn btn-primary"><i class="fas fa-plus"></i> Lanjut
             Belanja</a>
         <a href="<?php echo base_url('transaksi/isi_data_pesanan') ?>" class="btn btn-success"><i
