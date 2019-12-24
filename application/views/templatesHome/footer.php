@@ -5,8 +5,8 @@
               <h5 class="card-title">Kontak</h5>
               <p class="card-text mb-2 small"><i class="fas fa-map-marker-alt"> Jl. Dr. Setiabudi No.193, Kota
                       Bandung</i></p>
-              <p class="card-text mb-2 small"><i class="fas fa-phone-alt"></i> 029317492746</p>
-              <p class="card-text small"><i class="fab fa-whatsapp"></i> +62 320 574</p>
+              <p class="card-text mb-2 small"><i class="fas fa-phone-alt"></i> +62 320 574</p>
+              <p class="card-text small"><i class="fab fa-whatsapp"></i> 0821 6838 0859</p>
               <div class="card-text d-inline-block" style="font-size:30px;">
                   <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
                   <a href="#" class="text-light"><i class="fab fa-facebook-square"></i></a>
@@ -50,14 +50,73 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  <script src="<?= base_url() ?>assets/js/home/jquery-3.2.1.min.js"></script>
+  <script src="<?= base_url() ?>assets/js/home/jquery.easing.1.3.js"></script>
+  <script src="<?= base_url() ?>assets/js/home/script.js"></script>
+
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-  </script>
+  </script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
   </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+
+  <script>
+$(document).ready(function() {
+    $('#result').html('');
+    // load_data();
+
+
+    function load_data(query) {
+        $.ajax({
+            url: "<?php echo base_url(); ?>home/fetch",
+            method: "POST",
+            data: {
+                query: query
+            },
+            success: function(data) {
+                $('#result').html(data);
+            }
+        })
+
+        // if () {
+
+        // }
+    }
+
+    $('#search-produk').keyup(function() {
+        var search = $(this).val();
+        if (search != '') {
+            load_data(search);
+            $('#coba').html('');
+        } else {
+            load_data();
+        }
+    });
+});
+
+
+$(document).ready(function() {
+    var cek = "http://localhost/projectTubesRekweb/transaksi/detailSayur/5"
+    var cek1 = "http://localhost/projectTubesRekweb/transaksi/detailSayur/1"
+    var search = $(location).attr('href');
+    console.log(search);
+
+    if (cek == search) {
+        $('#cobaDulu').html('');
+
+    }
+
+    if (cek1 == search) {
+        $('#cobaDulu').html('');
+        $('.drop').html('');
+
+    }
+
+});
   </script>
   </body>
 

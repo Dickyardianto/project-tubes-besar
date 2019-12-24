@@ -1,13 +1,13 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
+    <div class="flash-datas" data-flashdatas="<?= $this->session->flashdata('message'); ?>"></div>
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
     <div class="row">
         <div class="col-lg-6">
 
-            <?= $this->session->flashdata('message'); ?>
+
 
             <?= form_open_multipart('petani/editProfile'); ?>
             <div class="form-group row">
@@ -43,7 +43,7 @@
 
             <div class="form-group row justify-content-end">
                 <div class="col-sm-10">
-                    <a href="<?= base_url('admin'); ?>" class="btn btn-secondary">Cancel</a>
+                    <a href="<?= base_url('petani'); ?>" class="btn btn-secondary">Cancel</a>
                     <button type="submit" class="btn btn-primary">Finish Edit</button>
                 </div>
             </div>

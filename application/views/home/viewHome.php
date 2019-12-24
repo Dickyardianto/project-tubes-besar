@@ -1,5 +1,5 @@
 <!-- Slide -->
-<div class="container" style="margin-top:90px;">
+<div class="container" id="coba" style="margin-top:90px;">
     <div class="row mb-5">
         <div class="col-md-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -36,9 +36,10 @@
 </div>
 
 <!-- Akhir Slide -->
+<div id="result"></div>
 
 <!-- Content Diskon-->
-<div class="container">
+<!-- <div class="container">
     <h3 class="h3" id="diskonSayur">Diskon Sayur</h3>
     <div class="row">
         <div class="col-md-3 col-sm-6">
@@ -72,18 +73,18 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Akhir Diskon-->
 
 <!-- Sayur Buah -->
 <div class="container">
-    <h4 class="mb-3 mt-4" id="rekSayur">Sayur Buah</h4>
+    <h4 class="mb-3 mt-4" id="sayur-buah">Sayur Buah</h4>
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuranBuahSorting as $sayur) : ?>
         <div class="col-sm-2 textStyle">
             <?php if (!$this->session->userdata('email')) : ?>
-            <a href="<?= base_url() ?>auth">
+            <a href="<?= base_url() ?>auth" class="coba">
                 <div class="card mb-3 coba">
                     <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayur['gambar_sayur']; ?>"
                         class="card-img-top" alt="...">
@@ -122,7 +123,7 @@
 
 <!-- Sayur Daun -->
 <div class="container">
-    <h4 class="mb-3 mt-4" id="sarLokal">Sayur Daun</h4>
+    <h4 class="mb-3 mt-4" id="sayur-daun">Sayur Daun</h4>
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuranDaunSorting as $sayur) : ?>
@@ -166,7 +167,7 @@
 
 <!-- Sayur Batang -->
 <div class="container">
-    <h4 class="mb-3 mt-4" id="sarLaris">Sayur Batang</h4>
+    <h4 class="mb-3 mt-4" id="sayur-batang">Sayur Batang</h4>
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuranBatangSorting as $sayur) : ?>
@@ -210,7 +211,7 @@
 
 <!-- Sayur Akar -->
 <div class="container">
-    <h4 class="mb-3 mt-4" id="sarLaris">Sayur Akar</h4>
+    <h4 class="mb-3 mt-4" id="sayur-akar">Sayur Akar</h4>
     <div class="row">
         <!-- menampilkan berbagai macam sayuran -->
         <?php foreach ($sayuranAkarSorting as $sayur) : ?>

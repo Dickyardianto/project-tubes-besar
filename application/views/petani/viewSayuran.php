@@ -1,6 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
+    <div class="flash-dataPP" data-flashdata="<?= $this->session->flashdata('message'); ?>"></div>
     <!-- Page Heading -->
     <div class="container">
         <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
@@ -15,7 +15,7 @@
             </div>
             <?php endif; ?>
             <!-- Tampilkan pesan error -->
-            <?= $this->session->flashdata('message'); ?>
+
         </div>
     </div>
 
@@ -79,8 +79,7 @@
                                 <a href="<?= base_url(); ?>petani/ubahSayur/<?= $s['id_sayur']; ?>"
                                     class="badge badge-success"><i class="far fa-edit"></i></a>
                                 <a href="<?= base_url(); ?>petani/hapusSayur/<?= $s['id_sayur'] ?>"
-                                    class="badge badge-danger" onclick="return confirm('yakin ? ');"><i
-                                        class="far fa-trash-alt"></i></a>
+                                    class="badge badge-danger tombol-hapus"><i class="far fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         <?php $i++; ?>

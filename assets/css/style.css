@@ -12,6 +12,9 @@ body {
 h1 {
     line-height: 50%;
 }
+body {
+    font-family: 'Titillium Web', sans-serif;
+}
 .textStyle a {
     color: black;
 }

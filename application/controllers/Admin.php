@@ -142,7 +142,7 @@ class Admin extends CI_Controller
 
     public function ubahPassword()
     {
-        $data['title'] = 'Ubah Password';
+        $data['title'] = 'Ubah password';
         $data['titleSidebar'] = 'Admin';
         $data['icon'] = '<i class="fas fa-user-cog"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();

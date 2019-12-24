@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
     <link href="<?= base_url(); ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min2.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/vendor/Assets-Dhika/style/style.css">
@@ -24,7 +26,7 @@
     <!-- Navbar/Header -->
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?= base_url(); ?>home">
                 <img src="<?= base_url(); ?>assets/vendor/Assets-Dhika/images/logo/logonsbig.png" width="30" height="30"
                     class="d-inline-block align-top" alt="">
                 Niaga Sayur</a>
@@ -34,25 +36,33 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav mr-auto">
-                    <div class="dropdown">
+                    <div class="dropdown drop">
                         <a class="nav-item nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kategori</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#diskonSayur">Sayur Daun</a>
-                            <a class="dropdown-item" href="#">Sayur Buah</a>
-                            <a class="dropdown-item" href="#">Sayur Batang</a>
-                            <a class="dropdown-item" href="#">Sayur Akar</a>
+                            <a class="dropdown-item scrolspy" href="#sayur-buah">Sayur Buah</a>
+                            <a class="dropdown-item scrolspy" href="#sayur-daun">Sayur Daun</a>
+                            <a class="dropdown-item scrolspy" href="#sayur-batang">Sayur Batang</a>
+                            <a class="dropdown-item scrolspy" href="#sayur-akar">Sayur Akar</a>
                         </div>
                     </div>
-                    <form class="form-inline my-2 my-lg-0">
+                    <form class="form-inline my-2 my-lg-0" id="cobaDulu">
                         <input class="form-control mr-sm-2 ml-3" type="search" placeholder="cari sayur disini !"
-                            aria-label="Search">
+                            aria-label="Search" name="search-produk" id="search-produk">
                     </form>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="navbar-brand mr-4 text-light" href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <?php $keranjang = '<i class="navbar-brand text-white" href="">
+                        <i class="fas fa-shopping-cart"> <span class="badge badge-danger badge-counter">' . $this->cart->total_items() . '</span></i></i>' ?>
+
+                        <?php if ($this->session->userdata('email')) : ?>
+                        <?php echo anchor('transaksi/tampil_keranjang', $keranjang) ?>
+                        <?php else : ?>
+                        <?php echo anchor('auth', $keranjang) ?>
+                        <?php endif; ?>
                     </li>
+
                     <?php if ($this->session->userdata('email')) : ?>
                     <!-- Coba -->
                     <li class="nav-item dropdown no-arrow">
