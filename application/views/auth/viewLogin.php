@@ -12,7 +12,7 @@
                 <div class="col-lg">
                     <div class="p-5">
                         <div class="text-center">
-                            <h1 class="h4 text-light mb-4">Login</h1>
+                            <h1 class="h4 text-dark mb-4">Login</h1>
                             <?= $this->session->flashdata('message'); ?>
                         </div>
                         <form class="user" method="post" action="<?= base_url() ?>auth">
@@ -27,14 +27,14 @@
                                     name="password" placeholder="Password">
                                 <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                            <button type="submit" class="btn btn-dark btn-user btn-block">
                                 Login
                             </button>
                             <hr>
                         </form>
-                        <div class="text-center">
+                        <!-- <div class="text-center">
                             <a class="small" href="forgot-password.html">Lupa password ?</a>
-                        </div>
+                        </div> -->
                         <div class="text-center">
                             <a class="small" href="<?= base_url() ?>auth/registrasi">Buat akun!</a>
                         </div>
