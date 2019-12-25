@@ -27,7 +27,7 @@
 
         <a href="<?php echo base_url('transaksi/hapus_keranjang') ?>" class="btn btn-danger"><i
                 class="fas fa-trash-alt"></i> Hapus Semua Keranjang</a>
-        <a href="<?php echo base_url() . 'pembeli/index' ?>" class="btn btn-primary"><i class="fas fa-plus"></i> Lanjut
+        <a href="<?php echo base_url() . 'pembeli' ?>" class="btn btn-primary"><i class="fas fa-plus"></i> Lanjut
             Belanja</a>
         <a href="<?php echo base_url('transaksi/isi_data_pesanan') ?>" class="btn btn-success"><i
                 class="fas fa-money-bill-wave-alt"></i> Bayar</a>

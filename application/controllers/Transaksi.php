@@ -9,6 +9,7 @@ class Transaksi extends CI_Controller
         parent::__construct();
         $this->load->model('petani_model', 'petani');
         $this->load->model('Home_model', 'home');
+        $this->load->model('Transaksi_model', 'transaksi');
         $this->load->library('cart');
     }
 
@@ -88,7 +89,7 @@ class Transaksi extends CI_Controller
 
         $this->cart->insert($data);
 
-        redirect();
+        redirect($_SERVER['HTTP_REFERER']);
     }
 
     public function tampil_keranjang()
@@ -130,10 +131,7 @@ class Transaksi extends CI_Controller
 
     public function tambah_data_pesanan()
     {
-
-        // $keranjang = $this->cart->get_item();
-
-        // $data['user']       = $this->db->get_where('user', ['id' => $this->session->userdata('id')])->row_array();
+        $id_user            = $this->input->post('id-user');
         $user               = $this->input->post('email');
         $nama_pemesan       = $this->input->post('namaPemesan');
         $nomor_telp         = $this->input->post('NomorHp');
@@ -143,7 +141,6 @@ class Transaksi extends CI_Controller
         // $pesanan            = $keranjang['name'];
         // $total_pembayaran   = $keranjang['subtotal'];
 
-
         $data_pesanan = array(
 
             'user'                  => $user,
@@ -151,59 +148,89 @@ class Transaksi extends CI_Controller
             'nomor_telephone'       => $nomor_telp,
             'jenis_pengiriman'      => $jenis_pengiriman,
             'jenis_pembayaran'      => $jenis_pembayaran,
-            'alamat'                => $alamat
-            // 'pesanan'               => $pesanan,
-            // 'total_pembayaran'      => $total_pembayaran
-            // 'bukti_pembayaran'      => $bukti_pembayaran
-
-
+            'alamat'                => $alamat,
+            'id_user'               => $id_user
         );
 
+        $this->transaksi->tambah_pesanan($data_pesanan);
+
+        if ($cart = $this->cart->contents()) {
+            foreach ($cart as $item) {
+                $data_detail = array(
+                    'id_pembeli' => $id_user,
+                    'nama_produk' => $item['name'],
+                    'kuantitas' => $item['qty'],
+                    'harga' => $item['price'],
+                    'satuan' => $item['satuan']
+                );
+                $this->transaksi->tambah_data_order($data_detail);
+            }
+        }
         $this->db->insert('data_pesanan', $data_pesanan);
         redirect('transaksi/ringkasan_pesanan');
     }
 
     public function upload_bukti_pembayaran()
     {
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-        $gambar   = $_FILES['gambar']['name'];
+        $upload_image = $_FILES['gambar']['name'];
+        if ($upload_image) {
+            $namafile = "file_" . time();
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size']     = '8048';
+            $config['upload_path'] = './assets/img/bukti-bayar/';
+            $config['file_name'] = $namafile;
 
+            $this->upload->initialize($config);
 
-        if ($gambar = '') { } else {
-
-            $config['upload_path'] = './bukti Pembayaran';
-            $config['allowed_types'] = 'jpg|jpeg|png';
-
-            $this->load->library('upload', $config);
-
-            if (!$this->upload->do_upload('gambar')) {
-
-
-                echo "Upload Gambar Gagal!";
+            if ($this->upload->do_upload('gambar')) {
+                $new_image = $this->upload->data();
+                $id_user = $data['user']['id'];
+                $data = [
+                    'id_pembeli' => $id_user,
+                    'bukti_pembelian' => $new_image['file_name'],
+                    'is_success' => $this->input->post('is-success')
+                ];
+                $this->db->insert('bukti_bayar', $data);
             } else {
-
-
-                $gambar = $this->upload->data('file_name');
+                // echo $this->upload->display_errors();
+                // $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Periksa ukuran gambar !');
+                // redirect('petani/tampilSayuran');
+                // redirect('petani/tampilSayuran');
             }
+            redirect('transaksi/notifikasi_Pesanan');
         }
 
-        $data = array(
+        // $gambar   = $_FILES['gambar']['name'];
 
 
-            'bukti_pembayaran'  => $gambar
+        // if ($gambar = '') { } else {
 
-        );
+        //     $config['upload_path'] = './bukti Pembayaran';
+        //     $config['allowed_types'] = 'jpg|jpeg|png';
 
-        $this->db->get_where("user", array('email' => $this->session->userdata('email')));
-        $this->db->update('data_pesanan', $data);
-        redirect('transaksi/notifikasi_Pesanan');
+        //     $this->load->library('upload', $config);
+
+        //     if (!$this->upload->do_upload('gambar')) {
+        //         echo "Upload Gambar Gagal!";
+        //     } else {
+        //         $gambar = $this->upload->data('file_name');
+        //     }
+        // }
+
+        // $data = array(
+        //     'bukti_pembayaran'  => $gambar
+
+        // );
+
+        // // $this->db->get_where("user", array('email' => $this->session->userdata('email')));
+        // $this->db->insert('bukti_bayar', $data);
     }
 
 
     public function ringkasan_pesanan()
     {
-
-
         $data['title'] = 'ringkasan data pesanan';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['data_pesanan'] = $this->db->get_where("data_pesanan", array('user' => $this->session->userdata('email')))->result();
@@ -230,6 +257,6 @@ class Transaksi extends CI_Controller
     {
 
         $this->cart->destroy();
-        redirect('pembeli/index');
+        redirect('pembeli');
     }
 }
