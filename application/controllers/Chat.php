@@ -57,6 +57,7 @@ class Chat extends CI_Controller
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
+            
             $result = $this->chatModel->getTeman($pengguna);
 
             $this->load->view('chat/chat_dashboard', 

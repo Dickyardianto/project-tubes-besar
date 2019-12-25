@@ -67,6 +67,12 @@
                     </li>
 
                     <?php if ($this->session->userdata('email')) : ?>
+                    <!-- Pesan Pembeli -->
+                        <?php if($this->session->userdata('role_id') == 2):?>
+                            <span class="navbar-brand text-white"><i class="fas fa-envelope"></i></span>
+                        <?php else: ?>
+                            <span class="navbar-brand text-white"><i class="fas fa-envelope"></i></span>
+                        <?php endif;?>
                     <!-- Coba -->
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
