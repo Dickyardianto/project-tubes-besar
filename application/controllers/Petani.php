@@ -344,4 +344,18 @@ class Petani extends CI_Controller
         $this->load->view('petani/viewDataPesanan', $data);
         $this->load->view('templates/footer');
     }
+
+    public function pesanMasuk()
+    {
+        $data['title'] = 'Pesan Masuk';
+        $data['titleSidebar'] = 'Petani';
+        $data['icon'] = '<i class="fas fa-book-reader"></i>';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        // $this->load->view('templateChat/headerChat', $data);
+        redirect('chat', 'refresh');
+    }
 }
