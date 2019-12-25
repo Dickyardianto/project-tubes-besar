@@ -56,24 +56,17 @@ class Transaksi extends CI_Controller
         $result = $this->db->where('id', $id)
             ->limit(1)
             ->get('sayuran');
-
         if ($result->num_rows() > 0) {
-
             return $result->row();
         } else {
-
             return array();
         }
     }
 
     public function tambah_keranjang($id)
     {
-
-
-
         $sayuran      = $this->find($id);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
         // $jumlah = $this->input->get('jumlah');;
 
         $data = array(
@@ -86,6 +79,8 @@ class Transaksi extends CI_Controller
 
 
         );
+        // var_dump($data);
+        // die;
 
         $this->cart->insert($data);
 
@@ -161,8 +156,11 @@ class Transaksi extends CI_Controller
                     'nama_produk' => $item['name'],
                     'kuantitas' => $item['qty'],
                     'harga' => $item['price'],
-                    'satuan' => $item['satuan']
+                    'satuan' => $item['satuan'],
+                    'id_produk_petani' => $item['id']
                 );
+                // var_dump($data_detail);
+                // die;
                 $this->transaksi->tambah_data_order($data_detail);
             }
         }
