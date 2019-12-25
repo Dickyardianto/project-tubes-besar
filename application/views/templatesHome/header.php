@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/vendor/Assets-Dhika/style/style.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
 
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles.css') ?>">
+    <script type="text/javascript" src="<?= base_url('assets/js/jquery.min.js') ?>"></script>
+    
     <title><?= $title ?></title>
     <link rel="shortcut icon" type="image/x-icon"
         href="<?= base_url(); ?>assets/vendor/Assets-Dhika/images/logo/logonsbig.png" />

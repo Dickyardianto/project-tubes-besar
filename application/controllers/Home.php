@@ -21,6 +21,7 @@ class Home extends CI_Controller
         $data['sayuranBatangSorting'] = $this->petani->getBySayurBatang();
         $data['sayuranAkarSorting'] = $this->petani->getBySayurAkar();
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
         $this->load->view('templatesHome/header', $data);
         $this->load->view('home/viewHome', $data);
         $this->load->view('templatesHome/footer');
@@ -120,5 +121,11 @@ class Home extends CI_Controller
             ';
             echo $output;
         }
+    }
+
+    public function tambahChat($teman)
+    {
+        $output = `ada`;
+        return $output;
     }
 }
