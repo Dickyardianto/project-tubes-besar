@@ -12,17 +12,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div id="container">
     <h1>
-        Selamat datang <?= $this->user->nama; ?>!
-        <span style="float: right">Browser: <?= $this->agent->browser().' '.$this->agent->version() ?></span>
+        <span style="float: right">Selamat datang <?= $this->user->nama; ?>!</span>     
+        <span>Pesan Masuk</span>
     </h1>
     
     <div id="body">
-        <p>Silahkan pilih teman:</p>
+        <p>Berikut merupakan daftar pesan terbaru kontak anda : </p>
         <table style="width: 100%" id="table-friend">
-            <?php foreach ($teman->result() as $item) { ?>
-            <tr>
-                <td><a href="javascript:;" data-friend="<?= $item->id ?>"><?= $item->nama ?></a></td>
-            </tr>
+            <?php foreach ( $result as $item) { ?>
+                    <tr>
+                        <td><hr><a href="javascript:;" data-friend="<?= $item->id ?>"><img src="<?= base_url('assets/img/profile/') . $item->image;?>" class="img-thumbnail  rounded-circle" style="height:80px; max-width: 80px;"> <b><?= $item->nama ?></b> </a></td>
+                    </tr>
             <?php } ?>
         </table>
         <br />

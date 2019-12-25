@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Chat extends CI_Controller
 {
@@ -11,6 +12,7 @@ class Chat extends CI_Controller
         $this->load->database();
         $this->load->helper(array('url', 'form'));
         $this->load->library('user_agent');
+        $this->load->model('Chat_model', 'chatModel');
 
         if (!isset($this->session->userdata['logged_in']) || $this->session->userdata['logged_in'] === false) {
             redirect('Auth');
@@ -21,67 +23,57 @@ class Chat extends CI_Controller
 
     public function index()
     {
-        $query = $this->db->query("SELECT role_id FROM user WHERE 'role_id' = 3 ");
-        $row = $query->row(); 
         if((isset($this->user->role_id)) == 3){
-           $this->indexPetani();
+           $this->indexPetani($this->user->id);
         } else{
-            $this->indexPembeli();
+            $this->indexPembeli($this->user->id);
         }
     }
 
-    public function indexPetani()
+    public function indexPetani($pengguna)
     {
         $data['title'] = 'Pesan Masuk';
         $data['titleSidebar'] = 'Petani';
         $data['icon'] = '<i class="fas fa-book-reader"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $teman = $this->db->where('id !=', $this->user->id)->get('user');
 
+        $result = $this->chatModel->getTeman($pengguna);
+            
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
-            // $this->load->view('templateChat/headerChat', $data);
-            $this->load->view('chat/chat_dashboard', array(
-                'teman' => $teman
-            ));
+            $this->load->view('chat/chat_dashboard', 
+            array('result' => $result)
+            );
     }
 
-    public function indexPembeli()
+    public function indexPembeli($pengguna)
     {
         $data['title'] = 'Pesan Masuk';
         $data['titleSidebar'] = 'Pembeli';
         $data['icon'] = '<i class="fas fa-book-reader"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $teman = $this->db->where('id !=', $this->user->id)->get('user');
 
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
-            // $this->load->view('templateChat/headerChat', $data);
-            $this->load->view('chat/chat_dashboard', array(
-                'teman' => $teman
-            ));
+            $result = $this->chatModel->getTeman($pengguna);
+
+            $this->load->view('chat/chat_dashboard', 
+            array('result' => $result)
+            );
     }
 
     public function getChats()
     {
         header('Content-Type: application/json');
         if ($this->input->is_ajax_request()) {
+
             // Find friend
             $friend = $this->db->get_where('user', array('id' => $this->input->post('chatWith')), 1)->row();
 
             // Get Chats
-            $chats = $this->db
-                ->select('chat.*, user.nama')
-                ->from('chat')
-                ->join('user', 'chat.send_by = user.id')
-                ->where('(send_by = '. $this->user->id .' AND send_to = '. $friend->id .')')
-                ->or_where('(send_to = '. $this->user->id .' AND send_by = '. $friend->id .')')
-                ->order_by('chat.time', 'desc')
-                ->limit(100)
-                ->get()
-                ->result();
+            $chats = $this->chatModel->getChats($friend);
 
             $result = array(
                 'name' => $friend->nama,
@@ -93,10 +85,6 @@ class Chat extends CI_Controller
 
     public function sendMessage()
     {
-        $this->db->insert('chat', array(
-            'message' => htmlentities($this->input->post('message', true)),
-            'send_to' => $this->input->post('chatWith'),
-            'send_by' => $this->user->id
-        ));
+        $this->chatModel->sendMessage($id);
     }
 }
