@@ -94,7 +94,8 @@
 </div>
 <!-- /.container-fluid -->
 
-
+</div>
+<!-- End of Main Content -->
 
 <!-- Modal tambah sayur-->
 <div class="modal fade" id="newSubMenuModal" tabindex="-1" role="dialog" aria-labelledby="newSubMenuModalLabel"
