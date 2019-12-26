@@ -1,5 +1,20 @@
 <!-- Slide -->
+<!-- <div class="container ">
+</div> -->
+
 <div class="container" id="coba" style="margin-top:90px;">
+    <?php if ($this->session->flashdata('message')) : ?>
+    <div class="row mt-3 text-center">
+        <div class="col-md-6 mx-auto">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">Anda telah
+                <strong>berhasil</strong> <?= $this->session->flashdata('message'); ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
     <div class="row mb-5">
         <div class="col-md-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

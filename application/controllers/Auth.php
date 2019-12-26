@@ -107,7 +107,7 @@ class Auth extends CI_Controller
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email not registered !');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email tidak terdaftar !');
             // Meredirect ke controller Auth/method index
             redirect('auth');
         }
@@ -117,7 +117,7 @@ class Auth extends CI_Controller
     {
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('role_id');
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You has ben logout');
+        $this->session->set_flashdata('message', 'logout');
         // Meredirect ke controller Auth/method index
         $this->cart->destroy();
         redirect('home');
