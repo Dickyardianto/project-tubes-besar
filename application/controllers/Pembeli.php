@@ -28,15 +28,6 @@ class Pembeli extends CI_Controller
 
     public function pesanMasuk()
     {
-        $data['title'] = 'Pesan Masuk';
-        $data['titleSidebar'] = 'Pembeli';
-        $data['icon'] = '<i class="fas fa-book-reader"></i>';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        // $this->load->view('templateChat/headerChat', $data);
         redirect('chat', 'refresh');
     }
 }
