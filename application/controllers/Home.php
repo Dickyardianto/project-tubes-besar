@@ -45,8 +45,8 @@ class Home extends CI_Controller
                 foreach ($data->result() as $row) {
                     $output .= '
                     <div class="col-sm-2 textStyle">
-                        <a href="' . base_url('auth') . '">
-                            <div class="card mb-3">
+                        <a class="coba" href="' . base_url('auth') . '">
+                            <div class="card mb-3 coba">
                                 <img src="' . base_url('assets/img/gambar-sayur') . "/" . $row->gambar_sayur . '"
                                     class="card-img-top" alt="...">
                                         <div class="card-body">
