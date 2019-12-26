@@ -23,7 +23,8 @@ class Chat extends CI_Controller
 
     public function index()
     {
-        if((isset($this->user->role_id)) != 2){
+        
+        if($this->session->userdata('role_id') != 2){
            $this->indexPetani($this->user->id);
         } else{
             $this->indexPembeli($this->user->id);
