@@ -1,6 +1,6 @@
 <div class="container" style="margin-top:140px;">
 
-    <h1 class="text-center mb-4"><i class="fas fa-shopping-cart"></i> Keranjang Belanja</h1>
+    <h2 class="text-center mb-4"><i class="fas fa-shopping-cart"></i> Keranjang Belanja</h2>
 
 
     <?php foreach ($this->cart->contents() as $Keranjang) : ?>

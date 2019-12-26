@@ -33,9 +33,9 @@
                     <label for="jenis Pengiriman">Jenis Pengiriman</label>
                     <select class="form-control" name="jenisPengiriman">
                         <option>COD</option>
-                        <option>JNE</option>
+                        <!-- <option>JNE</option>
                         <option>GRAB</option>
-                        <option>GOSEND</option>
+                        <option>GOSEND</option> -->
                     </select>
 
                 </div>

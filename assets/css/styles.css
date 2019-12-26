@@ -166,3 +166,14 @@ tr.msg-wgt-message-list-separator td {
     border: 0;
     height: 40px;
 }
+
+.alert {
+    animation: autoHide 0s ease-in 3s forwards;
+}
+
+@keyframes autoHide {
+    to {
+      visibility: hidden;
+      position: absolute;
+    }
+}

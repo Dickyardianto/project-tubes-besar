@@ -8,7 +8,7 @@
                 <div class="row no-gutters">
                     <div class="col-md-4">
                         <img src="<?= base_url('assets/img/gambar-sayur') . "/" . $sayuran['gambar_sayur']; ?>"
-                            class="card-img" alt="...">
+                            class="card-img p-4" alt="..." height="350px;">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -27,13 +27,13 @@
                             <div class="row warna" style="margin-top: -15px">
                                 <div class="col-md mb-1">
 
-                                    <?php echo anchor('transaksi/tambah_keranjang/' .$sayuran['id'], '<button type="submit" class="btn btn-block">Tambahkan ke
-                                            keranjang</button></a>' ) ?>
-                                            
+                                    <?php echo anchor('transaksi/tambah_keranjang/' . $sayuran['id'], '<button type="submit" class="btn btn-block">Tambahkan ke
+                                            keranjang</button></a>') ?>
+
                                 </div>
                                 <div class="col-md">
                                     <a href="javascript:;" data-friend="<?= $sayuran['id_petani'] ?>">
-                                    <button type="button" class="btn btn-block">Chat
+                                        <button type="button" class="btn btn-block">Chat
                                             Petani</button></a><br>
                                 </div>
                             </div>
@@ -189,7 +189,6 @@ jQuery(document).ready(function($) {
         false, // 9
         false // 10
     ];
-
     // New chat
     $(document).on('click', 'a[data-friend]', function(e) {
         var $data = $(this).data();
@@ -214,7 +213,6 @@ jQuery(document).ready(function($) {
             initializeChat();
         }
     });
-
     // Minimize Maximize
     $(document).on('click', '.msg-wgt-header > a.name', function() {
         var parent = $(this).parent().parent();
@@ -224,7 +222,6 @@ jQuery(document).ready(function($) {
             parent.addClass('minimize');
         }
     });
-
     // Close
     $(document).on('click', '.msg-wgt-header > a.close', function() {
         var parent = $(this).parent().parent();
@@ -235,21 +232,16 @@ jQuery(document).ready(function($) {
             initializeChat();
         }, 1000)
     });
-
     var chatInterval = [];
-
     var initializeChat = function() {
         $.each(chatInterval, function(index, val) {
             clearInterval(chatInterval[index]);   
         });
-
         $('.msg-wgt-active').each(function(index, el) {
             var $data = $(this).data();
             var $that = $(this);
             var $container = $that.find('.msg-wgt-message-container');
-
             chatInterval.push(setInterval(function() {
-
                 var oldscrollHeight = $container[0].scrollHeight;
                 var oldLength = 0;
                 $.post('<?= site_url('chat/getChats') ?>', {chatWith: $data.chatWith}, function(data, textStatus, xhr) {
@@ -260,19 +252,16 @@ jQuery(document).ready(function($) {
                     $.each(data.chats, function(index, el) {
                         newIndex--;
                         var val = data.chats[newIndex];
-
                         var tpl = $('#msg-template').html();
                         var tplBody = $('<div/>').append(tpl);
                         var id = (val.chat_id +'_'+ val.send_by +'_'+ val.send_to).toString();
                         
-
                         if ($that.find('#'+ id).length == 0) {
                             tplBody.find('tbody').attr('id', id); // set class
                             tplBody.find('td.name').text(val.nama); // set name
                             tplBody.find('td.time').text(val.time); // set time
                             tplBody.find('.msg-wgt-message-list-body > td').html(nl2br(val.message)); // set message
                             $that.find('.msg-wgt-message-list').append(tplBody.html()); // append message
-
                             //Auto-scroll
                             var newscrollHeight = $container[0].scrollHeight - 20; //Scroll height after the request
                             if (newIndex === 0) {
@@ -282,14 +271,12 @@ jQuery(document).ready(function($) {
                     });
                 });
             }, 1000));
-
             $that.find('textarea').on('keydown', function(e) {
                 var $textArea = $(this);
                 if (e.keyCode === 13 && e.shiftKey === false) {
                     $.post('<?= site_url('chat/sendMessage') ?>', {message: $textArea.val(), chatWith: $data.chatWith}, function(data, textStatus, xhr) {
                     });
                     $textArea.val(''); // clear input
-
                     e.preventDefault(); // stop 
                     return false;
                 }
@@ -300,8 +287,6 @@ jQuery(document).ready(function($) {
         var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br ' + '/>' : '<br>'; // Adjust comment to avoid issue on phpjs.org display
         return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
     }
-
-
     // on load
     initializeChat();
 });

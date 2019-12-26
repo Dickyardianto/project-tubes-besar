@@ -23,9 +23,10 @@ class Chat extends CI_Controller
 
     public function index()
     {
-        if((isset($this->user->role_id)) == 3){
-           $this->indexPetani($this->user->id);
-        } else{
+
+        if ($this->session->userdata('role_id') != 2) {
+            $this->indexPetani($this->user->id);
+        } else {
             $this->indexPembeli($this->user->id);
         }
     }
@@ -38,13 +39,15 @@ class Chat extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $result = $this->chatModel->getTeman($pengguna);
-            
-            $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
-            $this->load->view('templates/topbar', $data);
-            $this->load->view('chat/chat_dashboard', 
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view(
+            'chat/chat_dashboard',
             array('result' => $result)
-            );
+        );
+        $this->load->view('templates/footer');
     }
 
     public function indexPembeli($pengguna)
@@ -54,14 +57,17 @@ class Chat extends CI_Controller
         $data['icon'] = '<i class="fas fa-book-reader"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-            $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
-            $this->load->view('templates/topbar', $data);
-            $result = $this->chatModel->getTeman($pengguna);
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
 
-            $this->load->view('chat/chat_dashboard', 
+        $result = $this->chatModel->getTeman($pengguna);
+
+        $this->load->view(
+            'chat/chat_dashboard',
             array('result' => $result)
-            );
+        );
+        $this->load->view('templates/footer');
     }
 
     public function getChats()

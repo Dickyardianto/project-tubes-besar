@@ -40,7 +40,6 @@
                             <th scope="col">Kuantitas</th>
                             <th scope="col">Harga</th>
                             <th scope="col">Satuan</th>
-                            <th scope="col">Bukti Pembelian</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,8 +49,8 @@
                         $id_petani = $user['id'];
                         $id_sayur = $sayuran['id'];
 
-                        var_dump($id_sayur);
-                        die;
+                        // var_dump($id_sayur);
+                        // die;
 
                         // var_dump($id_petani);
                         // die;
@@ -61,14 +60,13 @@
                         // $this->db->where('sayuran.id_petani', $id_petani);
                         // $sayuran2 = $this->db->get();
 
-                        $queryTampilSesuaiId = "SELECT *
-                                            FROM `data_pesanan` JOIN `data_order`
-                                            ON `data_pesanan`.`id_user` = `data_order`.`id_pembeli`
-                                            WHERE `data_order`.`id_produk_petani` = ";
+                        $queryTampilSesuaiId = "SELECT *  FROM data_pesanan JOIN data_order ON data_pesanan.id_user = data_order.id_pembeli  JOIN sayuran ON data_order.id_produk_petani = sayuran.id WHERE sayuran.id_petani = $id_petani";
+                    
+                      
 
                         $sayuran2 = $this->db->query($queryTampilSesuaiId)->result_array();
-                        var_dump($sayuran2);
-                        die;
+                        // var_dump($sayuran2);
+                        // die;
                         ?>
                         <!-- Akhir Query -->
 
@@ -76,19 +74,16 @@
                         <?php foreach ($sayuran2 as $s) : ?>
                         <tr>
                             <th scope="row"><?= $i ?></th>
-                            <td><?= $s['jenis_sayur']; ?></td>
-                            <td><?= $s['nama_sayur']; ?></td>
-                            <td><?= $s['deskripsi']; ?></td>
+                            <td><?= $s['user']; ?></td>
+                            <td><?= $s['nama_pemesan'];?></td>
+                            <td><?= $s['nomor_telephone'];?></td>
+                            <td><?= $s['jenis_pengiriman'];?></td>
+                            <td><?= $s['jenis_pembayaran'];?></td>
+                            <td><?= $s['alamat'];?></td>
+                            <td><?= $s['nama_produk'];?></td>
+                            <td><?= $s['kuantitas'];?></td>
                             <td><?= $s['harga']; ?></td>
-                            <td><img src="<?= base_url('assets/img/gambar-sayur') . "/" . $s['gambar_sayur']; ?>" alt=""
-                                    width="60" height="60">
-                            </td>
-                            <td>
-                                <a href="<?= base_url(); ?>petani/ubahSayur/<?= $s['id_sayur']; ?>"
-                                    class="badge badge-success"><i class="far fa-edit"></i></a>
-                                <a href="<?= base_url(); ?>petani/hapusSayur/<?= $s['id_sayur'] ?>"
-                                    class="badge badge-danger tombol-hapus"><i class="far fa-trash-alt"></i></a>
-                            </td>
+                            <td><?= $s['satuan']; ?></td>
                         </tr>
                         <?php $i++; ?>
                         <?php endforeach; ?>

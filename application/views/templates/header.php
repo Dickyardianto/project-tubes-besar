@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> -->
+    <link rel="shortcut icon" type="image/x-icon"
+        href="<?= base_url(); ?>assets/vendor/Assets-Dhika/images/logo/logonsbig.png" />
 
 
 </head>

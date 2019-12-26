@@ -1,11 +1,12 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Chat_model extends CI_model
 {
     public function getTeman($pengguna)
     {
-        $query_str = "SELECT DISTINCT user.nama, id, user.image FROM user JOIN chat ON chat.send_by = user.id WHERE chat.send_to = $pengguna";
-        $query_str = "SELECT DISTINCT user.nama, id, user.image FROM user JOIN chat ON chat.send_to = user.id WHERE chat.send_by = $pengguna";
+        $query_str = "SELECT DISTINCT user.nama, id, user.image FROM user JOIN chat ON chat.send_by = user.id OR chat.send_to = user.id  WHERE  (chat.send_to = $pengguna OR chat.send_by = $pengguna) AND user.id != $pengguna";
+        // $query_str = "SELECT DISTINCT user.nama, id, user.image FROM user WHERE id != $pengguna ";
         return $this->db->query($query_str)->result();
     }
 

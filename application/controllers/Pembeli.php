@@ -25,4 +25,9 @@ class Pembeli extends CI_Controller
         $this->load->view('home/viewHome', $data);
         $this->load->view('templatesHome/footer');
     }
+
+    public function pesanMasuk()
+    {
+        redirect('chat', 'refresh');
+    }
 }
