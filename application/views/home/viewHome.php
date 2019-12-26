@@ -6,7 +6,7 @@
     <?php if ($this->session->flashdata('message')) : ?>
     <div class="row mt-3 text-center">
         <div class="col-md-6 mx-auto">
-            <div class="alert alert-success alert-dismissible fade show" role="alert">Anda telah
+            <div class="alert alert-success autoHide alert-dismissible fade show" role="alert">Anda telah
                 <strong>berhasil</strong> <?= $this->session->flashdata('message'); ?>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
