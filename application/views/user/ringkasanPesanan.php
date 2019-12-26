@@ -6,22 +6,22 @@
 
         <div class="card-body">
 
-            <?php foreach ($data_pesanan as $pesanan) : ?>
+            <!-- <?php foreach ($data_pesanan as $pesanan) : ?>
 
-            <h4 class="card-title"> <i class="fas fa-user"></i> Data Pemesan</h4><br>
-            <p class="card-text" name="nama" class="form-control-file">Nama Pemesan &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp;: &nbsp; &nbsp;<?php echo $pesanan->nama_pemesan ?></p>
-            <p class="card-text" name="nomorTelp">Nomor Telphone &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;
-                &nbsp; <?php echo $pesanan->nomor_telephone ?></p>
-            <p class="card-text" name="pengiriman">Jenis Pengiriman &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;
-                &nbsp; <?php echo $pesanan->jenis_pengiriman ?></p>
-            <p class="card-text" name="pembayaran">Jenis Pembayaran &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp;
-                <?php echo $pesanan->jenis_pembayaran ?></p>
-            <p class="card-text" name="alamat">Alamat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; <?php echo $pesanan->alamat ?> </p>
-            <br>
-            <br>
-            <?php endforeach; ?>
+                <h4 class="card-title"> <i class="fas fa-user"></i> Data Pemesan</h4><br>
+                <p class="card-text" name="nama" class="form-control-file">Nama Pemesan &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp;: &nbsp; &nbsp;<?php echo $pesanan->nama_pemesan ?></p>
+                <p class="card-text" name="nomorTelp">Nomor Telphone &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;
+                    &nbsp; <?php echo $pesanan->nomor_telephone ?></p>
+                <p class="card-text" name="pengiriman">Jenis Pengiriman &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;
+                    &nbsp; <?php echo $pesanan->jenis_pengiriman ?></p>
+                <p class="card-text" name="pembayaran">Jenis Pembayaran &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp;
+                    <?php echo $pesanan->jenis_pembayaran ?></p>
+                <p class="card-text" name="alamat">Alamat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; <?php echo $pesanan->alamat ?> </p>
+                <br>
+                <br>
+            <?php endforeach; ?> -->
             <h4 class="card-title"><i class="fas fa-file-alt"></i> Pesanan </h4><br>
 
 
@@ -35,14 +35,14 @@
 
             <p class="card-text">Total Pembayaran &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp;Rp
                 <?php $grand_total = 0;
-				if ($keranjang = $this->cart->contents()) {
-					foreach ($keranjang as $krj) {
+                if ($keranjang = $this->cart->contents()) {
+                    foreach ($keranjang as $krj) {
 
-						$grand_total = $grand_total + $krj['subtotal'];
-					}
+                        $grand_total = $grand_total + $krj['subtotal'];
+                    }
 
-					echo number_format($grand_total, 0, ',', '.');
-				} ?>,00
+                    echo number_format($grand_total, 0, ',', '.');
+                } ?>,00
             </p>
 
             <br>
