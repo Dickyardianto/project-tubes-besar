@@ -69,14 +69,17 @@
                     <?php if ($this->session->userdata('email')) : ?>
                     <!-- Pesan Pembeli -->
                         <?php if($this->session->userdata('role_id') == 2):?>
-                            <i class="navbar-brand text-white" href="">
+                            <a class="navbar-brand text-white" href="<?= base_url('pembeli/pesanMasuk'); ?>">
                                 <i class="fas fa-envelope"> 
                                     <span class="badge badge-danger badge-counter"></span>
                                 </i>
-                            </i>
-                            <!-- <span class="navbar-brand text-white"><i class="fas fa-envelope"></i></span> -->
+                            </a>
                         <?php else: ?>
-                            <span class="navbar-brand text-white"><i class="fas fa-envelope"></i></span>
+                            <a class="navbar-brand text-white" href="<?= base_url('petani/pesanMasuk'); ?>">
+                                <i class="fas fa-envelope"> 
+                                    <span class="badge badge-danger badge-counter"></span>
+                                </i>
+                            </a>
                         <?php endif;?>
                     <!-- Coba -->
                     <li class="nav-item dropdown no-arrow">
