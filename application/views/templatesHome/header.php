@@ -69,7 +69,12 @@
                     <?php if ($this->session->userdata('email')) : ?>
                     <!-- Pesan Pembeli -->
                         <?php if($this->session->userdata('role_id') == 2):?>
-                            <span class="navbar-brand text-white"><i class="fas fa-envelope"></i></span>
+                            <i class="navbar-brand text-white" href="">
+                                <i class="fas fa-envelope"> 
+                                    <span class="badge badge-danger badge-counter"></span>
+                                </i>
+                            </i>
+                            <!-- <span class="navbar-brand text-white"><i class="fas fa-envelope"></i></span> -->
                         <?php else: ?>
                             <span class="navbar-brand text-white"><i class="fas fa-envelope"></i></span>
                         <?php endif;?>
