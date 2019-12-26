@@ -7,7 +7,7 @@
         <div class="my-5 col-lg-6 mx-auto">
             <div class="p-5">
                 <div class="text-center">
-                    <h1 class="h4 text-light mb-4">Buat akun!</h1>
+                    <h1 class="h4 text-dark mb-4">Buat akun!</h1>
                 </div>
                 <form class="user" method="post" action="<?= base_url() ?>auth/registrasi">
                     <div class="form-group">
@@ -43,7 +43,7 @@
                                 name="password2" placeholder="Ulangi password">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-user btn-block mb-3">
+                    <button type="submit" class="btn btn-dark btn-user btn-block mb-3">
                         Daftar
                     </button>
                 </form>

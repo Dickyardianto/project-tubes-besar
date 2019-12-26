@@ -337,7 +337,8 @@ class Petani extends CI_Controller
         $data['titleSidebar'] = 'Petani';
         $data['icon'] = '<i class="fas fa-book-reader"></i>';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['sayuran'] = $this->petani->getAllSayuran();
+        $data['sayuran'] = $this->petani->getSayur();
+
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);

@@ -48,6 +48,10 @@
                         <?php
                         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
                         $id_petani = $user['id'];
+                        $id_sayur = $sayuran['id'];
+
+                        var_dump($id_sayur);
+                        die;
 
                         // var_dump($id_petani);
                         // die;
