@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container" style="padding-top: 3%;">
 
     <!-- <div class="card o-hidden border-0 shadow-lg my-5 col-lg-6 mx-auto">
         <div class="card-body p-0"> -->
     <!-- Nested Row within Card Body -->
     <div class="row">
         <div class="my-5 col-lg-6 mx-auto">
-            <div class="p-5">
+            <div class="p-5 shadow" style="background-color: #fff;">
                 <div class="text-center">
                     <h1 class="h4 text-dark mb-4">Buat akun!</h1>
                 </div>
@@ -48,7 +48,7 @@
                     </button>
                 </form>
                 <div class="text-center">
-                    <a class="small" href="<?= base_url() ?>auth">Sudah punya akun? Login!</a>
+                    <a class="small text-dark" href="<?= base_url() ?>auth">Sudah punya akun? Login!</a>
                 </div>
             </div>
         </div>
